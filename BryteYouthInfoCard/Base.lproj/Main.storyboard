@@ -1,69 +1,26 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--Welcome View Controller-->
+        <scene sceneID="V9D-hA-dNI">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="BryteYouthInfoCard" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="WelcomeVC" id="WkH-bj-rg3" customClass="WelcomeViewController" customModule="BryteYouthInfoCard" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                        <viewControllerLayoutGuide type="top" id="jjC-8P-G08"/>
+                        <viewControllerLayoutGuide type="bottom" id="MDC-A4-3Vp"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                    <view key="view" contentMode="scaleToFill" id="YoG-Ti-wk6">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="coffee.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="bwB-3a-saz">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                            </imageView>
-                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pXP-Kv-0SB">
-                                <rect key="frame" x="16" y="20" width="568" height="560"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="EJa-Ft-tjB">
-                                    <rect key="frame" x="0.0" y="0.0" width="568" height="560"/>
-                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                </view>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="568" id="gWE-P1-mY1"/>
-                                </constraints>
-                                <blurEffect style="dark"/>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="gWE-P1-mY1"/>
-                                    </mask>
-                                </variation>
-                            </visualEffectView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="bwB-3a-saz" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="3he-wc-S3p"/>
-                            <constraint firstItem="pXP-Kv-0SB" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Sgy-5E-OUr"/>
-                            <constraint firstItem="bwB-3a-saz" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="TqO-uZ-rPZ"/>
-                            <constraint firstItem="bwB-3a-saz" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="bca-SE-doc"/>
-                            <constraint firstItem="pXP-Kv-0SB" firstAttribute="leading" secondItem="bwB-3a-saz" secondAttribute="trailing" constant="-584" id="bnY-Kb-cLM"/>
-                            <constraint firstAttribute="centerX" secondItem="pXP-Kv-0SB" secondAttribute="centerX" id="d5t-GM-NWV"/>
-                            <constraint firstItem="pXP-Kv-0SB" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="rh5-Dx-TBl"/>
-                            <constraint firstAttribute="centerY" secondItem="pXP-Kv-0SB" secondAttribute="centerY" id="t1y-ve-7vc"/>
-                            <constraint firstAttribute="trailing" secondItem="bwB-3a-saz" secondAttribute="trailing" id="tpW-bN-YpB"/>
-                            <constraint firstItem="pXP-Kv-0SB" firstAttribute="top" secondItem="bwB-3a-saz" secondAttribute="bottom" constant="-580" id="uhs-6l-QqD"/>
-                        </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="bnY-Kb-cLM"/>
-                                <exclude reference="uhs-6l-QqD"/>
-                            </mask>
-                        </variation>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5uj-oD-hAu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="433" y="366"/>
+            <point key="canvasLocation" x="301" y="244"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="coffee.jpg" width="5616" height="3744"/>
-    </resources>
 </document>

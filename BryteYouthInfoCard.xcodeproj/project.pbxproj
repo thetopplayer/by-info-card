@@ -8,11 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		BA3E9A931B09701D00C87C41 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3E9A921B09701D00C87C41 /* AppDelegate.swift */; };
-		BA3E9A951B09701D00C87C41 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3E9A941B09701D00C87C41 /* ViewController.swift */; };
 		BA3E9A981B09701D00C87C41 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA3E9A961B09701D00C87C41 /* Main.storyboard */; };
 		BA3E9A9D1B09701D00C87C41 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA3E9A9B1B09701D00C87C41 /* LaunchScreen.xib */; };
 		BA3E9AA91B09701D00C87C41 /* BryteYouthInfoCardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3E9AA81B09701D00C87C41 /* BryteYouthInfoCardTests.swift */; };
-		BA762D451B130AE300534AAA /* coffee.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BA762D441B130AE300534AAA /* coffee.jpg */; };
+		BA4212E31B1C290300571F81 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4212E21B1C290300571F81 /* WelcomeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,13 +28,12 @@
 		BA3E9A8D1B09701D00C87C41 /* BryteYouthInfoCard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BryteYouthInfoCard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA3E9A911B09701D00C87C41 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BA3E9A921B09701D00C87C41 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		BA3E9A941B09701D00C87C41 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		BA3E9A971B09701D00C87C41 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BA3E9A9C1B09701D00C87C41 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		BA3E9AA21B09701D00C87C41 /* BryteYouthInfoCardTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BryteYouthInfoCardTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA3E9AA71B09701D00C87C41 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BA3E9AA81B09701D00C87C41 /* BryteYouthInfoCardTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BryteYouthInfoCardTests.swift; sourceTree = "<group>"; };
-		BA762D441B130AE300534AAA /* coffee.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = coffee.jpg; sourceTree = "<group>"; };
+		BA4212E21B1C290300571F81 /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +57,8 @@
 		BA3E9A841B09701D00C87C41 = {
 			isa = PBXGroup;
 			children = (
+				BA3E9A961B09701D00C87C41 /* Main.storyboard */,
+				BA4212E11B1C290300571F81 /* Code */,
 				BA3E9A8F1B09701D00C87C41 /* BryteYouthInfoCard */,
 				BA3E9AA51B09701D00C87C41 /* BryteYouthInfoCardTests */,
 				BA3E9A8E1B09701D00C87C41 /* Products */,
@@ -77,10 +77,7 @@
 		BA3E9A8F1B09701D00C87C41 /* BryteYouthInfoCard */ = {
 			isa = PBXGroup;
 			children = (
-				BA3E9A961B09701D00C87C41 /* Main.storyboard */,
 				BA3E9A921B09701D00C87C41 /* AppDelegate.swift */,
-				BA3E9A941B09701D00C87C41 /* ViewController.swift */,
-				BA762D441B130AE300534AAA /* coffee.jpg */,
 				BA3E9A9B1B09701D00C87C41 /* LaunchScreen.xib */,
 				BA3E9A901B09701D00C87C41 /* Supporting Files */,
 			);
@@ -110,6 +107,14 @@
 				BA3E9AA71B09701D00C87C41 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		BA4212E11B1C290300571F81 /* Code */ = {
+			isa = PBXGroup;
+			children = (
+				BA4212E21B1C290300571F81 /* WelcomeViewController.swift */,
+			);
+			path = Code;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -193,7 +198,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				BA3E9A981B09701D00C87C41 /* Main.storyboard in Resources */,
-				BA762D451B130AE300534AAA /* coffee.jpg in Resources */,
 				BA3E9A9D1B09701D00C87C41 /* LaunchScreen.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -212,8 +216,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BA3E9A951B09701D00C87C41 /* ViewController.swift in Sources */,
 				BA3E9A931B09701D00C87C41 /* AppDelegate.swift in Sources */,
+				BA4212E31B1C290300571F81 /* WelcomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -242,6 +246,7 @@
 				BA3E9A971B09701D00C87C41 /* Base */,
 			);
 			name = Main.storyboard;
+			path = BryteYouthInfoCard;
 			sourceTree = "<group>";
 		};
 		BA3E9A9B1B09701D00C87C41 /* LaunchScreen.xib */ = {
