@@ -12,6 +12,9 @@
 		BA3E9A9D1B09701D00C87C41 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA3E9A9B1B09701D00C87C41 /* LaunchScreen.xib */; };
 		BA3E9AA91B09701D00C87C41 /* BryteYouthInfoCardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3E9AA81B09701D00C87C41 /* BryteYouthInfoCardTests.swift */; };
 		BA4212E31B1C290300571F81 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4212E21B1C290300571F81 /* WelcomeViewController.swift */; };
+		BA4212E61B1EEB2900571F81 /* Background.png in Resources */ = {isa = PBXBuildFile; fileRef = BA4212E51B1EEB2900571F81 /* Background.png */; };
+		BA4212E81B1EED0300571F81 /* BYFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4212E71B1EED0300571F81 /* BYFont.swift */; };
+		BA4212EA1B1EF0CB00571F81 /* BYActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4212E91B1EF0CB00571F81 /* BYActionButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +37,9 @@
 		BA3E9AA71B09701D00C87C41 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BA3E9AA81B09701D00C87C41 /* BryteYouthInfoCardTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BryteYouthInfoCardTests.swift; sourceTree = "<group>"; };
 		BA4212E21B1C290300571F81 /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		BA4212E51B1EEB2900571F81 /* Background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Background.png; sourceTree = "<group>"; };
+		BA4212E71B1EED0300571F81 /* BYFont.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BYFont.swift; sourceTree = "<group>"; };
+		BA4212E91B1EF0CB00571F81 /* BYActionButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BYActionButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +65,7 @@
 			children = (
 				BA3E9A961B09701D00C87C41 /* Main.storyboard */,
 				BA4212E11B1C290300571F81 /* Code */,
+				BA4212E41B1EEB2900571F81 /* Graphics */,
 				BA3E9A8F1B09701D00C87C41 /* BryteYouthInfoCard */,
 				BA3E9AA51B09701D00C87C41 /* BryteYouthInfoCardTests */,
 				BA3E9A8E1B09701D00C87C41 /* Products */,
@@ -113,8 +120,18 @@
 			isa = PBXGroup;
 			children = (
 				BA4212E21B1C290300571F81 /* WelcomeViewController.swift */,
+				BA4212E71B1EED0300571F81 /* BYFont.swift */,
+				BA4212E91B1EF0CB00571F81 /* BYActionButton.swift */,
 			);
 			path = Code;
+			sourceTree = "<group>";
+		};
+		BA4212E41B1EEB2900571F81 /* Graphics */ = {
+			isa = PBXGroup;
+			children = (
+				BA4212E51B1EEB2900571F81 /* Background.png */,
+			);
+			path = Graphics;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -197,6 +214,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA4212E61B1EEB2900571F81 /* Background.png in Resources */,
 				BA3E9A981B09701D00C87C41 /* Main.storyboard in Resources */,
 				BA3E9A9D1B09701D00C87C41 /* LaunchScreen.xib in Resources */,
 			);
@@ -216,6 +234,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA4212EA1B1EF0CB00571F81 /* BYActionButton.swift in Sources */,
+				BA4212E81B1EED0300571F81 /* BYFont.swift in Sources */,
 				BA3E9A931B09701D00C87C41 /* AppDelegate.swift in Sources */,
 				BA4212E31B1C290300571F81 /* WelcomeViewController.swift in Sources */,
 			);
