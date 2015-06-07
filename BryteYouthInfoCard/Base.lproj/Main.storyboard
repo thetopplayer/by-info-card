@@ -1,11 +1,40 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="WkH-bj-rg3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="iJ2-zh-yPW">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
+        <!--Root View Controller-->
+        <scene sceneID="oRY-Sb-cBO">
+            <objects>
+                <viewController id="iJ2-zh-yPW" customClass="RootViewController" customModule="BryteYouthInfoCard" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="YYf-Sf-15o"/>
+                        <viewControllerLayoutGuide type="bottom" id="gNZ-rX-3vd"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="1CI-fQ-Qn6">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background.png" translatesAutoresizingMaskIntoConstraints="NO" id="Q0b-sg-151">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Q0b-sg-151" secondAttribute="trailing" id="EsE-7D-QzD"/>
+                            <constraint firstItem="Q0b-sg-151" firstAttribute="leading" secondItem="1CI-fQ-Qn6" secondAttribute="leading" id="MhE-hq-VKe"/>
+                            <constraint firstItem="Q0b-sg-151" firstAttribute="bottom" secondItem="gNZ-rX-3vd" secondAttribute="top" id="SCC-5r-I7Z"/>
+                            <constraint firstItem="Q0b-sg-151" firstAttribute="top" secondItem="1CI-fQ-Qn6" secondAttribute="top" id="pcn-Xl-jQ3"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TK5-m3-0a4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-474" y="244"/>
+        </scene>
         <!--Welcome View Controller-->
         <scene sceneID="V9D-hA-dNI">
             <objects>
@@ -18,19 +47,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background.png" translatesAutoresizingMaskIntoConstraints="NO" id="Q0b-sg-151">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BRYTE YOUTH" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nha-M6-lfT">
                                 <rect key="frame" x="241" y="260" width="118" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4yP-UR-Aze">
                                 <rect key="frame" x="254" y="234.5" width="91" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fQq-YR-OOg">
@@ -49,6 +75,9 @@
                                 <state key="normal" title="I AM NEW">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="beginWithNewAttendee:" destination="WkH-bj-rg3" eventType="touchUpInside" id="h4F-Or-nwx"/>
+                                </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kgZ-Kf-vsq">
                                 <rect key="frame" x="16" y="385" width="568" height="20"/>
@@ -71,6 +100,9 @@
                                         <exclude reference="hLs-gz-MPE"/>
                                     </mask>
                                 </variation>
+                                <connections>
+                                    <action selector="beginWithSeldomAttendee:" destination="WkH-bj-rg3" eventType="touchUpInside" id="F1Q-Q9-YE5"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VcN-mE-8nD" customClass="BYActionButton" customModule="BryteYouthInfoCard" customModuleProvider="target">
                                 <rect key="frame" x="125" y="500.5" width="350" height="75"/>
@@ -83,10 +115,13 @@
                                 </state>
                                 <variation key="default">
                                     <mask key="constraints">
-                                        <exclude reference="uG4-J4-OD5"/>
                                         <exclude reference="WAI-lS-Jza"/>
+                                        <exclude reference="uG4-J4-OD5"/>
                                     </mask>
                                 </variation>
+                                <connections>
+                                    <action selector="beginWithRegularAttendee:" destination="WkH-bj-rg3" eventType="touchUpInside" id="AZO-W7-dBK"/>
+                                </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="llQ-0F-fzs">
                                 <rect key="frame" x="16" y="480" width="568" height="20"/>
@@ -103,16 +138,12 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="VcN-mE-8nD" firstAttribute="top" secondItem="llQ-0F-fzs" secondAttribute="bottom" id="1Wu-ZK-BLc"/>
-                            <constraint firstAttribute="trailing" secondItem="Q0b-sg-151" secondAttribute="trailing" id="1n1-aW-Ndf"/>
                             <constraint firstItem="UL1-ek-BM4" firstAttribute="height" secondItem="tGQ-jj-nbR" secondAttribute="height" id="1yy-fg-eyb"/>
                             <constraint firstItem="kgZ-Kf-vsq" firstAttribute="trailing" secondItem="YoG-Ti-wk6" secondAttribute="trailingMargin" id="6AE-Mu-IDV"/>
-                            <constraint firstItem="Q0b-sg-151" firstAttribute="bottom" secondItem="MDC-A4-3Vp" secondAttribute="top" id="76m-n5-XO6"/>
                             <constraint firstAttribute="centerX" secondItem="VcN-mE-8nD" secondAttribute="centerX" id="9AW-1P-p1t"/>
                             <constraint firstAttribute="centerX" secondItem="Nha-M6-lfT" secondAttribute="centerX" id="C75-hE-VqR"/>
                             <constraint firstAttribute="centerX" secondItem="fQq-YR-OOg" secondAttribute="centerX" constant="1" id="CM7-16-M9G"/>
                             <constraint firstItem="llQ-0F-fzs" firstAttribute="leading" secondItem="YoG-Ti-wk6" secondAttribute="leadingMargin" id="EqK-US-eSN"/>
-                            <constraint firstItem="Q0b-sg-151" firstAttribute="leading" secondItem="YoG-Ti-wk6" secondAttribute="leading" id="Kes-00-qmE"/>
-                            <constraint firstItem="Q0b-sg-151" firstAttribute="top" secondItem="YoG-Ti-wk6" secondAttribute="top" id="Kgj-T7-1nd"/>
                             <constraint firstItem="tGQ-jj-nbR" firstAttribute="width" secondItem="VcN-mE-8nD" secondAttribute="width" id="LG8-eq-ub7"/>
                             <constraint firstAttribute="centerY" secondItem="Nha-M6-lfT" secondAttribute="centerY" constant="30" id="OGV-NI-sUL"/>
                             <constraint firstItem="tGQ-jj-nbR" firstAttribute="top" secondItem="Nha-M6-lfT" secondAttribute="bottom" constant="30" id="QrQ-8l-Idw"/>
@@ -144,7 +175,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5uj-oD-hAu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="301" y="244"/>
+            <point key="canvasLocation" x="259" y="244"/>
         </scene>
     </scenes>
     <resources>
