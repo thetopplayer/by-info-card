@@ -58,6 +58,19 @@ class WelcomeViewController: UIViewController {
         
         // TODO: Do some animations here
         
-        self.delegate?.goToForm(userType)
+        UIView.animateWithDuration(
+            0.5,
+            delay: 0,
+            usingSpringWithDamping: 0.7,
+            initialSpringVelocity: 0,
+            options: UIViewAnimationOptions.CurveEaseIn,
+            animations: { () -> Void in
+                self.mainLabel.transform = CGAffineTransformMakeTranslation(0, self.view.frame.size.height)
+        }) { (finished) -> Void in
+            self.willMoveToParentViewController(nil)
+            self.view.removeFromSuperview()
+            self.removeFromParentViewController()
+            self.delegate?.goToForm(userType)
+        };
     }
 }

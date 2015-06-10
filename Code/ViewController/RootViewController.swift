@@ -8,20 +8,24 @@
 
 import UIKit
 
-// Enum for what kind of person is filling out the form
-enum BYUserType {
-    case New            // First-timer
-    case Sometimes      // Been here before, but not regular
-    case Regular        // Regular attendee
+enum BYPageType {
+    case Interests
+    case Profile
+    case AgeGroup
+    case Submit
+    case Done
 }
 
-class RootViewController: UIViewController, BYWelcomeProtocol {
+class RootViewController: UIViewController, BYWelcomeProtocol, BYPageAnimating {
+    
+    var submission: BYSubmission?
     
     override func viewDidLoad() {
 
         super.viewDidLoad()
 
         configureWelcomeScene()
+        
     }
     
     // MARK: Configure
@@ -39,7 +43,44 @@ class RootViewController: UIViewController, BYWelcomeProtocol {
     // MARK: - BYWelcomeProtocol
     
     func goToForm(userType: BYUserType) {
-        NSLog("Boom")
+        
+        self.submission = BYSubmission()
+        
+        let interestsVC = self.storyboard!.instantiateViewControllerWithIdentifier("InterestsVC") as! UIViewController
+        self.addChildViewController(interestsVC)
+        interestsVC.view.alpha = 0
+        self.view.addSubview(interestsVC.view)
+        interestsVC.didMoveToParentViewController(self)
+        
+        UIView.animateWithDuration(
+            0.5,
+            delay: 0,
+            usingSpringWithDamping: 0.7,
+            initialSpringVelocity: 0,
+            options: UIViewAnimationOptions.CurveEaseIn,
+            animations: { () -> Void in
+                interestsVC.view.alpha = 1
+        }) { (finished) -> Void in
+            
+        }
     }
-
+    
+    // MARK: - BYPageAnimating
+    
+    func pageWillEnter(viewCOntroller: UIViewController, pageType: BYPageType) {
+        
+    }
+    
+    func pageWillExit(viewController: UIViewController, pageType: BYPageType) {
+        
+    }
+    
+    func pageDidEnter(viewController: UIViewController, pageType: BYPageType) {
+        
+    }
+    
+    func pageDidExit(viewController: UIViewController, pageType: BYPageType) {
+//        viewController.removeFromParentViewController()
+//        viewController.view.subviews
+    }
 }
