@@ -16,7 +16,7 @@ enum BYPageType {
     case Done
 }
 
-class RootViewController: UIViewController, BYWelcomeProtocol, BYPageAnimating {
+class RootViewController: UIViewController, BYWelcomeProtocol, BYPageAnimating, BYSubmissionFinishing {
     
     var submission: BYSubmission?
     
@@ -82,5 +82,11 @@ class RootViewController: UIViewController, BYWelcomeProtocol, BYPageAnimating {
     func pageDidExit(viewController: UIViewController, pageType: BYPageType) {
 //        viewController.removeFromParentViewController()
 //        viewController.view.subviews
+    }
+    
+    // MARK: - BYSubmissionFinishing
+    
+    func returnToWelcomeScreen() {
+        
     }
 }
