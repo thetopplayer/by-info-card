@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="89" id="KGk-i7-Jjw" customClass="BYAgeTableViewCell" customModule="BryteYouthInfoCard" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="366" height="89"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eoG-4B-9xG">
+                        <rect key="frame" x="29" y="8" width="309" height="71"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Age" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LDr-nq-Myb">
+                                <rect key="frame" x="139.5" y="38.5" width="30.5" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Demographic" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="boL-bE-2Jq">
+                                <rect key="frame" x="103" y="8" width="103.5" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="boL-bE-2Jq" firstAttribute="top" secondItem="eoG-4B-9xG" secondAttribute="top" constant="8" id="KaT-4M-OQ9"/>
+                            <constraint firstAttribute="centerX" secondItem="LDr-nq-Myb" secondAttribute="centerX" id="Q1f-Q7-2hY"/>
+                            <constraint firstItem="LDr-nq-Myb" firstAttribute="top" secondItem="boL-bE-2Jq" secondAttribute="bottom" constant="10" id="f78-1m-aMK"/>
+                            <constraint firstAttribute="centerX" secondItem="boL-bE-2Jq" secondAttribute="centerX" constant="-0.25" id="ytJ-zz-rJZ"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="centerX" secondItem="eoG-4B-9xG" secondAttribute="centerX" id="0Ol-z2-ax8"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="eoG-4B-9xG" secondAttribute="trailing" constant="20" id="0r2-eW-lZL"/>
+                    <constraint firstAttribute="centerY" secondItem="eoG-4B-9xG" secondAttribute="centerY" id="bku-ub-DmT"/>
+                    <constraint firstItem="eoG-4B-9xG" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="xeB-ZH-Okb"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="ageRangeLabel" destination="LDr-nq-Myb" id="SCu-DO-S7A"/>
+                <outlet property="demographicLabel" destination="boL-bE-2Jq" id="Tbl-gP-Vpz"/>
+            </connections>
+            <point key="canvasLocation" x="87" y="369.5"/>
+        </tableViewCell>
+    </objects>
+</document>
