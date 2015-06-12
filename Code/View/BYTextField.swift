@@ -19,5 +19,16 @@ class BYTextField: UITextField {
         self.backgroundColor = UIColor(white: 1.0, alpha: 0.3)
         self.textColor = UIColor.whiteColor()
         self.font = UIFont.font(BYFontType.Normal, fontSize: 20)
+        self.layer.borderWidth = 0
+        self.layer.cornerRadius = 0
+    }
+    
+    override func textRectForBounds(bounds: CGRect) -> CGRect {
+        return CGRectInset(bounds, 10, 10)
+    }
+    
+    override func editingRectForBounds(bounds: CGRect) -> CGRect {
+        return CGRectInset(bounds, 10, 10)
     }
 }
+

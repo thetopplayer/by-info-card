@@ -22,6 +22,18 @@
 		BA58AAB91B27B74400426109 /* BYTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA58AAB81B27B74400426109 /* BYTextField.swift */; };
 		BAA6837F1B2A014A002C0868 /* BYAgeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA6837D1B2A014A002C0868 /* BYAgeTableViewCell.swift */; };
 		BAA683801B2A014A002C0868 /* BYAgeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAA6837E1B2A014A002C0868 /* BYAgeTableViewCell.xib */; };
+		BAA683831B2A2389002C0868 /* BYCheckboxTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA683811B2A2389002C0868 /* BYCheckboxTableViewCell.swift */; };
+		BAA683841B2A2389002C0868 /* BYCheckboxTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAA683821B2A2389002C0868 /* BYCheckboxTableViewCell.xib */; };
+		BAA683871B2A2689002C0868 /* Checkbox@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BAA683851B2A2689002C0868 /* Checkbox@2x.png */; };
+		BAA683881B2A2689002C0868 /* Checkbox@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BAA683861B2A2689002C0868 /* Checkbox@3x.png */; };
+		BAA6838B1B2A5B56002C0868 /* CheckboxSelected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BAA683891B2A5B56002C0868 /* CheckboxSelected@2x.png */; };
+		BAA6838C1B2A5B56002C0868 /* CheckboxSelected@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BAA6838A1B2A5B56002C0868 /* CheckboxSelected@3x.png */; };
+		BAA683931B2A5C63002C0868 /* Facebook@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BAA6838D1B2A5C63002C0868 /* Facebook@2x.png */; };
+		BAA683941B2A5C63002C0868 /* Facebook@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BAA6838E1B2A5C63002C0868 /* Facebook@3x.png */; };
+		BAA683951B2A5C63002C0868 /* Instagram@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BAA6838F1B2A5C63002C0868 /* Instagram@2x.png */; };
+		BAA683961B2A5C63002C0868 /* Instagram@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BAA683901B2A5C63002C0868 /* Instagram@3x.png */; };
+		BAA683971B2A5C63002C0868 /* Twitter@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BAA683911B2A5C63002C0868 /* Twitter@2x.png */; };
+		BAA683981B2A5C63002C0868 /* Twitter@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BAA683921B2A5C63002C0868 /* Twitter@3x.png */; };
 		BAE733C21B2409F000486B84 /* BYFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE733BD1B2409F000486B84 /* BYFont.swift */; };
 		BAE733C31B2409F000486B84 /* BYActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE733BF1B2409F000486B84 /* BYActionButton.swift */; };
 		BAE733C41B2409F000486B84 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE733C11B2409F000486B84 /* WelcomeViewController.swift */; };
@@ -60,6 +72,18 @@
 		BA58AAB81B27B74400426109 /* BYTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BYTextField.swift; sourceTree = "<group>"; };
 		BAA6837D1B2A014A002C0868 /* BYAgeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BYAgeTableViewCell.swift; sourceTree = "<group>"; };
 		BAA6837E1B2A014A002C0868 /* BYAgeTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BYAgeTableViewCell.xib; sourceTree = "<group>"; };
+		BAA683811B2A2389002C0868 /* BYCheckboxTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BYCheckboxTableViewCell.swift; sourceTree = "<group>"; };
+		BAA683821B2A2389002C0868 /* BYCheckboxTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BYCheckboxTableViewCell.xib; sourceTree = "<group>"; };
+		BAA683851B2A2689002C0868 /* Checkbox@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Checkbox@2x.png"; sourceTree = "<group>"; };
+		BAA683861B2A2689002C0868 /* Checkbox@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Checkbox@3x.png"; sourceTree = "<group>"; };
+		BAA683891B2A5B56002C0868 /* CheckboxSelected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "CheckboxSelected@2x.png"; sourceTree = "<group>"; };
+		BAA6838A1B2A5B56002C0868 /* CheckboxSelected@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "CheckboxSelected@3x.png"; sourceTree = "<group>"; };
+		BAA6838D1B2A5C63002C0868 /* Facebook@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Facebook@2x.png"; sourceTree = "<group>"; };
+		BAA6838E1B2A5C63002C0868 /* Facebook@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Facebook@3x.png"; sourceTree = "<group>"; };
+		BAA6838F1B2A5C63002C0868 /* Instagram@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Instagram@2x.png"; sourceTree = "<group>"; };
+		BAA683901B2A5C63002C0868 /* Instagram@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Instagram@3x.png"; sourceTree = "<group>"; };
+		BAA683911B2A5C63002C0868 /* Twitter@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Twitter@2x.png"; sourceTree = "<group>"; };
+		BAA683921B2A5C63002C0868 /* Twitter@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Twitter@3x.png"; sourceTree = "<group>"; };
 		BAE733BD1B2409F000486B84 /* BYFont.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BYFont.swift; sourceTree = "<group>"; };
 		BAE733BF1B2409F000486B84 /* BYActionButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BYActionButton.swift; sourceTree = "<group>"; };
 		BAE733C11B2409F000486B84 /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
@@ -157,6 +181,16 @@
 		BA4212E41B1EEB2900571F81 /* Graphics */ = {
 			isa = PBXGroup;
 			children = (
+				BAA6838D1B2A5C63002C0868 /* Facebook@2x.png */,
+				BAA6838E1B2A5C63002C0868 /* Facebook@3x.png */,
+				BAA6838F1B2A5C63002C0868 /* Instagram@2x.png */,
+				BAA683901B2A5C63002C0868 /* Instagram@3x.png */,
+				BAA683911B2A5C63002C0868 /* Twitter@2x.png */,
+				BAA683921B2A5C63002C0868 /* Twitter@3x.png */,
+				BAA683891B2A5B56002C0868 /* CheckboxSelected@2x.png */,
+				BAA6838A1B2A5B56002C0868 /* CheckboxSelected@3x.png */,
+				BAA683851B2A2689002C0868 /* Checkbox@2x.png */,
+				BAA683861B2A2689002C0868 /* Checkbox@3x.png */,
 				BA4212E51B1EEB2900571F81 /* Background.png */,
 			);
 			path = Graphics;
@@ -186,6 +220,8 @@
 				BA58AAB81B27B74400426109 /* BYTextField.swift */,
 				BAA6837D1B2A014A002C0868 /* BYAgeTableViewCell.swift */,
 				BAA6837E1B2A014A002C0868 /* BYAgeTableViewCell.xib */,
+				BAA683811B2A2389002C0868 /* BYCheckboxTableViewCell.swift */,
+				BAA683821B2A2389002C0868 /* BYCheckboxTableViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -293,10 +329,21 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BAA683841B2A2389002C0868 /* BYCheckboxTableViewCell.xib in Resources */,
 				BA4212E61B1EEB2900571F81 /* Background.png in Resources */,
+				BAA683961B2A5C63002C0868 /* Instagram@3x.png in Resources */,
+				BAA683941B2A5C63002C0868 /* Facebook@3x.png in Resources */,
+				BAA683931B2A5C63002C0868 /* Facebook@2x.png in Resources */,
+				BAA6838C1B2A5B56002C0868 /* CheckboxSelected@3x.png in Resources */,
 				BA3E9A981B09701D00C87C41 /* Main.storyboard in Resources */,
 				BAA683801B2A014A002C0868 /* BYAgeTableViewCell.xib in Resources */,
+				BAA6838B1B2A5B56002C0868 /* CheckboxSelected@2x.png in Resources */,
 				BA3E9A9D1B09701D00C87C41 /* LaunchScreen.xib in Resources */,
+				BAA683981B2A5C63002C0868 /* Twitter@3x.png in Resources */,
+				BAA683871B2A2689002C0868 /* Checkbox@2x.png in Resources */,
+				BAA683881B2A2689002C0868 /* Checkbox@3x.png in Resources */,
+				BAA683971B2A5C63002C0868 /* Twitter@2x.png in Resources */,
+				BAA683951B2A5C63002C0868 /* Instagram@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -330,6 +377,7 @@
 				BAE733C21B2409F000486B84 /* BYFont.swift in Sources */,
 				BAA6837F1B2A014A002C0868 /* BYAgeTableViewCell.swift in Sources */,
 				BAE733CB1B24166C00486B84 /* BYSubmission.swift in Sources */,
+				BAA683831B2A2389002C0868 /* BYCheckboxTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

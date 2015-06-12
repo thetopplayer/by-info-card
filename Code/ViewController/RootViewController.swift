@@ -46,7 +46,7 @@ class RootViewController: UIViewController, BYWelcomeProtocol, BYPageAnimating, 
         
         self.submission = BYSubmission()
         
-        let interestsVC = self.storyboard!.instantiateViewControllerWithIdentifier("InterestsVC") as! UIViewController
+        let interestsVC = self.storyboard!.instantiateViewControllerWithIdentifier("ProfileVC") as! UIViewController
         self.addChildViewController(interestsVC)
         interestsVC.view.alpha = 0
         self.view.addSubview(interestsVC.view)

@@ -8,17 +8,38 @@
 
 import UIKit
 
-class AgeGroupViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class AgeGroupViewController: BasePageViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var headerLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
     
+    var selectedRow: Int? = nil
+    
+    
+    let demographicDict = [
+        BYAgeGroup.None: "Not Specified",
+        BYAgeGroup.HighSchool: "High School",
+        BYAgeGroup.College: "College & Young Adult",
+        BYAgeGroup.Adult: "Adult",
+        BYAgeGroup.Middle: "Middle Age",
+        BYAgeGroup.Senior: "Senior"
+    ]
+    
+    let ageRangesDict = [
+        BYAgeGroup.None: "NONE",
+        BYAgeGroup.HighSchool: "Ages 15 - 18",
+        BYAgeGroup.College: "Ages 19 - 25",
+        BYAgeGroup.Adult: "Ages 26 - 45",
+        BYAgeGroup.Middle: "Ages 46 - 60",
+        BYAgeGroup.Senior: "Ages 60+"
+    ]
     
     override func viewDidLoad() {
      
         super.viewDidLoad()
 
-        
+        configureHeaderLabel()
+        configureTableView()
     }
     
     // MARK: - Configure
@@ -31,18 +52,44 @@ class AgeGroupViewController: UIViewController, UITableViewDelegate, UITableView
     }
 
     func configureTableView() {
-        self.tableView.registerNib(UINib(nibName: "ByAgeTableViewCell", bundle: nil), forCellReuseIdentifier: "AgeGroupCell")
+        self.tableView.registerNib(UINib(nibName: "BYAgeTableViewCell", bundle: nil), forCellReuseIdentifier: "AgeGroupCell")
         self.tableView.backgroundColor = UIColor.clearColor()
+        self.tableView.delegate = self
+        self.tableView.dataSource = self
+        self.tableView.rowHeight = 100
+        self.tableView.separatorStyle = UITableViewCellSeparatorStyle.None
+        self.tableView.scrollEnabled = false
     }
     
     // MARK: - UITableView Delegate & Data Source
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
+        let cellIdentifier = "AgeGroupCell"
+        var cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier) as! BYAgeTableViewCell
+        
+        // Configure cell
+        let ageGroup = BYAgeGroup(rawValue: indexPath.row)!
+        cell.demographicLabel.text = demographicDict[ageGroup]
+        cell.ageRangeLabel.text = ageRangesDict[ageGroup]
+        
+        return cell
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 6
+        return 5
     }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
+        // If it's selected, de-select it
+        if selectedRow == indexPath.row {
+            self.tableView.deselectRowAtIndexPath(indexPath, animated: true)
+            self.selectedRow = nil
+        } else {
+            selectedRow = indexPath.row
+        }
+    }
+
     
 }

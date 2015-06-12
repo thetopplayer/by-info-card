@@ -15,8 +15,8 @@ enum BYUserType {
     case Regular        // Regular attendee
 }
 
-enum BYAgeGroup {
-    case None
+enum BYAgeGroup: Int {
+    case None = -1
     case HighSchool
     case College
     case Adult

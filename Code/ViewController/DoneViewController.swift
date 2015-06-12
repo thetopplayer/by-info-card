@@ -13,12 +13,12 @@ protocol BYSubmissionFinishing: class {
     func returnToWelcomeScreen();
 }
 
-class DoneViewController: UIViewController {
+class DoneViewController: BasePageViewController {
 
     @IBOutlet weak var thankYouLabel: UILabel!
     @IBOutlet weak var contactLabel: UILabel!
     @IBOutlet weak var getConnectedLabel: UILabel!
-    weak var delegate: BYSubmissionFinishing?
+    weak var submissionDelegate: BYSubmissionFinishing?
     
     override func viewDidLoad() {
 
@@ -44,12 +44,12 @@ class DoneViewController: UIViewController {
         self.contactLabel.text = "We'll contact you soon."
         self.contactLabel.textAlignment = .Center
         self.contactLabel.textColor = UIColor.whiteColor()
-        self.contactLabel.font = UIFont.font(BYFontType.Light, fontSize: 50)
+        self.contactLabel.font = UIFont.font(BYFontType.Light, fontSize: 40)
         
         self.getConnectedLabel.text = "Get connected to Bryte Youth"
         self.getConnectedLabel.textColor = UIColor.whiteColor()
         self.getConnectedLabel.textAlignment = .Center
-        self.getConnectedLabel.font = UIFont.font(BYFontType.LightItalic, fontSize: 40)
+        self.getConnectedLabel.font = UIFont.font(BYFontType.LightItalic, fontSize: 30)
     }
     
     func animateExit() {
@@ -61,8 +61,8 @@ class DoneViewController: UIViewController {
             options: UIViewAnimationOptions.CurveEaseOut,
             animations: { () -> Void in
                 // TODO: add animations here
-        }) { (finished) -> Void in
-            self.delegate?.returnToWelcomeScreen()
+            }) { (finished: Bool) -> Void in
+            self.submissionDelegate?.returnToWelcomeScreen()
         }
     }
     

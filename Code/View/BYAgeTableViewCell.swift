@@ -12,17 +12,36 @@ class BYAgeTableViewCell: UITableViewCell {
 
     @IBOutlet weak var demographicLabel: UILabel!
     @IBOutlet weak var ageRangeLabel: UILabel!
+    @IBOutlet weak var cardView: UIView!
     
+    let defaultCardColor = UIColor(white: 0, alpha: 0.2)
+    let selectedCardColor = UIColor(white: 0, alpha: 0.5)
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        
         self.configureLabels()
+        self.backgroundColor = UIColor.clearColor()
+        self.cardView.backgroundColor = defaultCardColor
+        self.selectionStyle = .None
     }
 
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+        if selected {
+            self.cardView.backgroundColor = selectedCardColor
+        } else {
+            self.cardView.backgroundColor = defaultCardColor
+        }
+    }
+    
+    override func setHighlighted(highlighted: Bool, animated: Bool) {
+        super.setHighlighted(highlighted, animated: animated)
+        if highlighted {
+            self.cardView.backgroundColor = selectedCardColor
+        } else {
+            self.cardView.backgroundColor = defaultCardColor
+        }
     }
     
     // MARK: - Configure
@@ -31,11 +50,11 @@ class BYAgeTableViewCell: UITableViewCell {
         
         self.demographicLabel.textAlignment = .Center
         self.demographicLabel.textColor = UIColor.whiteColor()
-        self.demographicLabel.font = UIFont.font(BYFontType.Light, fontSize: 40)
+        self.demographicLabel.font = UIFont.font(BYFontType.Light, fontSize: 30)
         
         self.ageRangeLabel.textAlignment = .Center
         self.ageRangeLabel.textColor = UIColor.whiteColor()
-        self.ageRangeLabel.font = UIFont.font(BYFontType.Light, fontSize: 20)
+        self.ageRangeLabel.font = UIFont.font(BYFontType.Light, fontSize: 18)
     }
     
 }
