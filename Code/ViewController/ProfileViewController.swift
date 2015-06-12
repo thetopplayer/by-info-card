@@ -13,7 +13,6 @@ class ProfileViewController: BasePageViewController {
     @IBOutlet var labels: [UILabel]!
     @IBOutlet var textFields: [BYTextField]!
     
-    
     @IBOutlet weak var nameField: BYTextField!
     @IBOutlet weak var emailField: BYTextField!
     @IBOutlet weak var phoneField: BYTextField!

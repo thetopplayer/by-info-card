@@ -22,10 +22,18 @@ class BYCheckboxTableViewCell: UITableViewCell {
         self.configureLabel()
         self.configureCheckbox()
     }
+    
+    override func setHighlighted(highlighted: Bool, animated: Bool) {
+        super.setHighlighted(highlighted, animated: animated)
+        if highlighted {
+            self.checkbox.alpha = 0.6
+        } else {
+            self.checkbox.alpha = 1.0
+        }
+    }
 
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-        
         self.checkbox.image = UIImage(named: selected ? "CheckboxSelected" : "Checkbox")
     }
     

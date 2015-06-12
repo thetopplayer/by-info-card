@@ -171,11 +171,46 @@
                     <connections>
                         <outlet property="mainLabel" destination="Nha-M6-lfT" id="6sM-p6-4q7"/>
                         <outlet property="welcomeLabel" destination="4yP-UR-Aze" id="p1G-Q1-yBR"/>
+                        <outletCollection property="userTypeButtons" destination="tGQ-jj-nbR" collectionClass="NSMutableArray" id="wyy-B9-TR8"/>
+                        <outletCollection property="userTypeButtons" destination="UL1-ek-BM4" collectionClass="NSMutableArray" id="RXY-A9-83n"/>
+                        <outletCollection property="userTypeButtons" destination="VcN-mE-8nD" collectionClass="NSMutableArray" id="t4L-vi-ISW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5uj-oD-hAu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="259" y="244"/>
+        </scene>
+        <!--Container View Controller-->
+        <scene sceneID="Bx6-oK-LHB">
+            <objects>
+                <viewController storyboardIdentifier="ContainerVC" id="UM7-rk-SIh" customClass="ContainerViewController" customModule="BryteYouthInfoCard" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="UsJ-dZ-vAu"/>
+                        <viewControllerLayoutGuide type="bottom" id="J1u-9K-R48"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="QeS-Zm-CNh">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="44Y-Vc-u5S">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="44Y-Vc-u5S" secondAttribute="trailing" id="0fF-l0-oKl"/>
+                            <constraint firstItem="44Y-Vc-u5S" firstAttribute="bottom" secondItem="J1u-9K-R48" secondAttribute="top" id="XuR-mQ-BoD"/>
+                            <constraint firstItem="44Y-Vc-u5S" firstAttribute="leading" secondItem="QeS-Zm-CNh" secondAttribute="leading" id="c9k-iK-vhh"/>
+                            <constraint firstItem="44Y-Vc-u5S" firstAttribute="top" secondItem="QeS-Zm-CNh" secondAttribute="top" id="lFa-Rc-dkc"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="scrollView" destination="44Y-Vc-u5S" id="TyJ-TK-6mH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZHl-qD-Xgf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="935" y="244"/>
         </scene>
         <!--Interests View Controller-->
         <scene sceneID="5lF-OT-Egl">
@@ -190,7 +225,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Interested in..." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z9V-qy-J2I">
-                                <rect key="frame" x="46" y="50" width="109.5" height="20.5"/>
+                                <rect key="frame" x="76" y="50" width="109.5" height="20.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="110" id="Mg2-5n-DtI"/>
                                 </constraints>
@@ -204,15 +239,15 @@
                                 </variation>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="rus-SV-e5e">
-                                <rect key="frame" x="46" y="100.5" width="508" height="303.5"/>
+                                <rect key="frame" x="0.0" y="100.5" width="600" height="303.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Z9V-qy-J2I" firstAttribute="leading" secondItem="dF0-mK-xLm" secondAttribute="leadingMargin" constant="30" id="8zt-XD-3hw"/>
+                            <constraint firstItem="Z9V-qy-J2I" firstAttribute="leading" secondItem="dF0-mK-xLm" secondAttribute="leadingMargin" constant="60" id="8zt-XD-3hw"/>
                             <constraint firstItem="pjg-Cz-HMC" firstAttribute="top" secondItem="Z9V-qy-J2I" secondAttribute="bottom" constant="551" id="OBm-B9-k9s"/>
-                            <constraint firstItem="rus-SV-e5e" firstAttribute="leading" secondItem="dF0-mK-xLm" secondAttribute="leadingMargin" constant="30" id="evd-db-ibq"/>
+                            <constraint firstItem="rus-SV-e5e" firstAttribute="leading" secondItem="dF0-mK-xLm" secondAttribute="leading" id="evd-db-ibq"/>
                             <constraint firstAttribute="centerX" secondItem="rus-SV-e5e" secondAttribute="centerX" id="hu4-YV-s59"/>
                             <constraint firstItem="Z9V-qy-J2I" firstAttribute="top" secondItem="lUJ-EP-SSs" secondAttribute="bottom" constant="30" id="ik9-b0-aah"/>
                             <constraint firstItem="rus-SV-e5e" firstAttribute="top" secondItem="Z9V-qy-J2I" secondAttribute="bottom" constant="30" id="wUd-Jo-fdV"/>
@@ -355,7 +390,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tr1-b6-yZs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-474" y="1802"/>
+            <point key="canvasLocation" x="-474" y="1732"/>
         </scene>
         <!--Age Group View Controller-->
         <scene sceneID="wGQ-K9-j2c">
@@ -547,7 +582,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gzr-S8-NMt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1288" y="1020"/>
+            <point key="canvasLocation" x="972" y="1020"/>
         </scene>
     </scenes>
     <resources>

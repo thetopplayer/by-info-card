@@ -16,7 +16,7 @@ enum BYPageType {
     case Done
 }
 
-class RootViewController: UIViewController, BYWelcomeProtocol, BYPageAnimating, BYSubmissionFinishing {
+class RootViewController: UIViewController, BYWelcomeProtocol, BYSubmissionFinishing {
     
     var submission: BYSubmission?
     
@@ -46,11 +46,11 @@ class RootViewController: UIViewController, BYWelcomeProtocol, BYPageAnimating, 
         
         self.submission = BYSubmission()
         
-        let interestsVC = self.storyboard!.instantiateViewControllerWithIdentifier("ProfileVC") as! UIViewController
-        self.addChildViewController(interestsVC)
-        interestsVC.view.alpha = 0
-        self.view.addSubview(interestsVC.view)
-        interestsVC.didMoveToParentViewController(self)
+        let containerVC = self.storyboard?.instantiateViewControllerWithIdentifier("ContainerVC") as! UIViewController
+        self.addChildViewController(containerVC)
+        containerVC.view.alpha = 0
+        self.view.addSubview(containerVC.view)
+        containerVC.didMoveToParentViewController(self)
         
         UIView.animateWithDuration(
             0.5,
@@ -59,29 +59,10 @@ class RootViewController: UIViewController, BYWelcomeProtocol, BYPageAnimating, 
             initialSpringVelocity: 0,
             options: UIViewAnimationOptions.CurveEaseIn,
             animations: { () -> Void in
-                interestsVC.view.alpha = 1
+                containerVC.view.alpha = 1
         }) { (finished) -> Void in
             
         }
-    }
-    
-    // MARK: - BYPageAnimating
-    
-    func pageWillEnter(viewCOntroller: UIViewController, pageType: BYPageType) {
-        
-    }
-    
-    func pageWillExit(viewController: UIViewController, pageType: BYPageType) {
-        
-    }
-    
-    func pageDidEnter(viewController: UIViewController, pageType: BYPageType) {
-        
-    }
-    
-    func pageDidExit(viewController: UIViewController, pageType: BYPageType) {
-//        viewController.removeFromParentViewController()
-//        viewController.view.subviews
     }
     
     // MARK: - BYSubmissionFinishing

@@ -16,6 +16,7 @@ class WelcomeViewController: UIViewController {
 
     @IBOutlet weak var welcomeLabel: UILabel!
     @IBOutlet weak var mainLabel: UILabel!
+    @IBOutlet var userTypeButtons: [BYActionButton]!
     weak var delegate: BYWelcomeProtocol?
     
     override func viewDidLoad() {
@@ -42,30 +43,38 @@ class WelcomeViewController: UIViewController {
     
 
     @IBAction func beginWithNewAttendee(sender: AnyObject) {
-        self.animateAndEnter(BYUserType.New)
+        self.animateAndEnter(BYUserType.New, buttonSelected: sender as! UIButton)
     }
     
-    
     @IBAction func beginWithSeldomAttendee(sender: AnyObject) {
-        self.animateAndEnter(BYUserType.Sometimes)
+        self.animateAndEnter(BYUserType.Sometimes, buttonSelected: sender as! UIButton)
     }
 
     @IBAction func beginWithRegularAttendee(sender: AnyObject) {
-        self.animateAndEnter(BYUserType.Regular)
+        self.animateAndEnter(BYUserType.Regular, buttonSelected: sender as! UIButton)
     }
     
-    private func animateAndEnter(userType: BYUserType) {
+    private func animateAndEnter(userType: BYUserType, buttonSelected button: UIButton) {
         
         // TODO: Do some animations here
         
         UIView.animateWithDuration(
-            0.5,
+            0.3,
             delay: 0,
-            usingSpringWithDamping: 0.7,
-            initialSpringVelocity: 0,
             options: UIViewAnimationOptions.CurveEaseIn,
             animations: { () -> Void in
-                self.mainLabel.transform = CGAffineTransformMakeTranslation(0, self.view.frame.size.height)
+                let scaleTransform: CGFloat = 1.5
+                self.mainLabel.transform = CGAffineTransformMakeScale(scaleTransform, scaleTransform)
+                self.mainLabel.alpha = 0
+                self.welcomeLabel.transform = CGAffineTransformMakeScale(0, 0)
+                self.welcomeLabel.alpha = 0
+                button.transform = CGAffineTransformMakeScale(scaleTransform, scaleTransform)
+                for userTypeButton in self.userTypeButtons {
+                    if userTypeButton != button {
+                        userTypeButton.transform = CGAffineTransformMakeScale(0, 0)
+                    }
+                    userTypeButton.alpha = 0
+                }
         }) { (finished) -> Void in
             self.willMoveToParentViewController(nil)
             self.view.removeFromSuperview()

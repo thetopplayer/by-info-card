@@ -13,7 +13,7 @@ class AgeGroupViewController: BasePageViewController, UITableViewDelegate, UITab
     @IBOutlet weak var headerLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
     
-    var selectedRow: Int? = nil
+    var selectedRow = -1
     
     
     let demographicDict = [
@@ -85,11 +85,9 @@ class AgeGroupViewController: BasePageViewController, UITableViewDelegate, UITab
         // If it's selected, de-select it
         if selectedRow == indexPath.row {
             self.tableView.deselectRowAtIndexPath(indexPath, animated: true)
-            self.selectedRow = nil
+            self.selectedRow = -1
         } else {
             selectedRow = indexPath.row
         }
     }
-
-    
 }

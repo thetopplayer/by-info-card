@@ -48,6 +48,7 @@ class InterestsViewController: BasePageViewController, UITableViewDataSource, UI
         self.tableView.scrollEnabled = false
         self.tableView.separatorStyle = .None
         self.tableView.allowsMultipleSelection = true
+        self.tableView.contentInset = UIEdgeInsets(top: 0, left: self.headerLabel.left, bottom: 0, right: 0)
     }
     
     // MARK: - UITableView DataSource & Delegate
@@ -63,6 +64,22 @@ class InterestsViewController: BasePageViewController, UITableViewDataSource, UI
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return interests.count
+    }
+    
+    // MARK: - EKPageScrolling Delegate
+    
+    override func onScrollWithPageOnRight(offset: CGFloat) {
+        
+    }
+    
+    override func onScrollWithPageOnLeft(offset: CGFloat) {
+        self.headerLabel.transform = CGAffineTransformMakeTranslation(offset * self.view.width, -self.view.height * offset * 0.2)
+        for i in 0..<self.interests.count {
+            let cell = self.tableView.visibleCells()[i] as! BYCheckboxTableViewCell
+            let i = CGFloat(i)
+            cell.transform = CGAffineTransformMakeTranslation(i * offset * -150, 0)
+            cell.checkbox.transform = CGAffineTransformMakeScale((1 - (offset * 5)), (1 - (offset * 5)))
+        }
     }
     
     

@@ -8,18 +8,22 @@
 
 import UIKit
 
-class BasePageViewController: UIViewController {
+class BasePageViewController: UIViewController, EKPageScrolling {
 
-    weak var delegate: BYPageAnimating?
+    weak var delegate: EKPageScrolling?
     
     override func viewDidLoad() {
      
         super.viewDidLoad()
-        
     }
     
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
         self.view.backgroundColor = UIColor.clearColor()
     }
+    
+    // MARK: - EKPageScrolling (implement in subclass)
+    
+    func onScrollWithPageOnLeft(offset: CGFloat) {}
+    func onScrollWithPageOnRight(offset: CGFloat) {}
 }
