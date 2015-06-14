@@ -22,26 +22,29 @@ class BYAgeTableViewCell: UITableViewCell {
         
         self.configureLabels()
         self.backgroundColor = UIColor.clearColor()
-        self.cardView.backgroundColor = defaultCardColor
+        self.cardView.backgroundColor = self.defaultCardColor
         self.selectionStyle = .None
     }
 
     override func setSelected(selected: Bool, animated: Bool) {
+
         super.setSelected(selected, animated: animated)
-        if selected {
-            self.cardView.backgroundColor = selectedCardColor
-        } else {
-            self.cardView.backgroundColor = defaultCardColor
-        }
+        
+        // Animate selection/deselection of cell
+        UIView.animateWithDuration(0.2, animations: { () -> Void in
+            let scale: CGFloat = 0.95
+            self.cardView.transform = CGAffineTransformMakeScale(scale, scale)
+            self.cardView.backgroundColor = selected ?  self.selectedCardColor : self.defaultCardColor
+            }, completion: { (finished) -> Void in
+                UIView.animateWithDuration(0.1, animations: { () -> Void in
+                    self.cardView.transform = CGAffineTransformIdentity
+            })
+        })
     }
     
     override func setHighlighted(highlighted: Bool, animated: Bool) {
         super.setHighlighted(highlighted, animated: animated)
-        if highlighted {
-            self.cardView.backgroundColor = selectedCardColor
-        } else {
-            self.cardView.backgroundColor = defaultCardColor
-        }
+        self.cardView.backgroundColor = highlighted ? self.selectedCardColor : self.defaultCardColor
     }
     
     // MARK: - Configure

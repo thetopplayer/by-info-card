@@ -15,6 +15,7 @@ protocol BYWelcomeProtocol: class {
 class WelcomeViewController: UIViewController {
 
     @IBOutlet weak var welcomeLabel: UILabel!
+    @IBOutlet weak var logoImageView: UIImageView!
     @IBOutlet var userTypeButtons: [BYActionButton]!
     weak var delegate: BYWelcomeProtocol?
     
@@ -84,10 +85,12 @@ class WelcomeViewController: UIViewController {
             delay: 0,
             options: UIViewAnimationOptions.CurveEaseIn,
             animations: { () -> Void in
-                let scaleTransform: CGFloat = 1.2
+                let scaleUp: CGFloat = 1.2
+                self.logoImageView.transform = CGAffineTransformMakeScale(scaleUp, scaleUp)
+                self.logoImageView.alpha = 0
                 self.welcomeLabel.transform = CGAffineTransformMakeScale(0, 0)
                 self.welcomeLabel.alpha = 0
-                button.transform = CGAffineTransformMakeScale(scaleTransform, scaleTransform)
+                button.transform = CGAffineTransformMakeScale(scaleUp, scaleUp)
                 for userTypeButton in self.userTypeButtons {
                     if userTypeButton != button {
                         userTypeButton.transform = CGAffineTransformMakeScale(0.5, 0.5)

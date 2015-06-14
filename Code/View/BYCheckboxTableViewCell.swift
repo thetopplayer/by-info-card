@@ -33,8 +33,21 @@ class BYCheckboxTableViewCell: UITableViewCell {
     }
 
     override func setSelected(selected: Bool, animated: Bool) {
+
         super.setSelected(selected, animated: animated)
+        
+        // Set checkbox image
         self.checkbox.image = UIImage(named: selected ? "CheckboxSelected" : "Checkbox")
+
+        // Animate selection/deselection of checkbox
+        UIView.animateWithDuration(0.1, animations: { () -> Void in
+            let scale: CGFloat = selected ? 1.1 : 0.9
+            self.checkbox.transform = CGAffineTransformMakeScale(scale, scale)
+        }, completion: { (finished) -> Void in
+            UIView.animateWithDuration(0.1, animations: { () -> Void in
+                self.checkbox.transform = CGAffineTransformIdentity
+            })
+        })
     }
     
     func configureLabel() {

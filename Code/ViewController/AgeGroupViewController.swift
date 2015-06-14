@@ -48,7 +48,7 @@ class AgeGroupViewController: BasePageViewController, UITableViewDelegate, UITab
         self.tableView.dataSource = self
         self.tableView.rowHeight = 100
         self.tableView.separatorStyle = UITableViewCellSeparatorStyle.None
-        self.tableView.scrollEnabled = false
+        self.tableView.bounces = false
     }
     
     // MARK: - UITableView Delegate & Data Source

@@ -116,12 +116,12 @@ class ContainerViewController: UIViewController, UIScrollViewDelegate {
         
         // Notify left page about scroll
         if leftPageIndex >= 0 {
-            (pages[leftPageIndex] as! EKPageScrolling).onScrollWithPageOnLeft(leftOffset)
+            (self.pages[leftPageIndex] as! EKPageScrolling).onScrollWithPageOnLeft(leftOffset)
         }
         
         // Notify right page about scroll
         if rightPageIndex < self.pages.count {
-            (pages[rightPageIndex] as! EKPageScrolling).onScrollWithPageOnRight(rightOffset)
+            (self.pages[rightPageIndex] as! EKPageScrolling).onScrollWithPageOnRight(rightOffset)
         }
     }
 }

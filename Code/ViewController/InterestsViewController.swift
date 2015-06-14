@@ -84,10 +84,10 @@ class InterestsViewController: BasePageViewController, UITableViewDataSource, UI
         self.tableView.delegate = self
         self.tableView.dataSource = self
         self.tableView.registerNib(UINib(nibName: "BYCheckboxTableViewCell", bundle: nil), forCellReuseIdentifier: kInterestsCellIdentifier)
-        self.tableView.scrollEnabled = false
         self.tableView.separatorStyle = .None
         self.tableView.allowsMultipleSelection = true
-        self.tableView.contentInset = UIEdgeInsets(top: 0, left: self.headerLabel.left, bottom: 0, right: 0)
+        self.tableView.contentInset = UIEdgeInsets(top: 0, left: self.headerLabel.left, bottom: 0, right: -self.headerLabel.left)
+        self.tableView.bounces = false
     }
     
     // MARK: - UITableView DataSource & Delegate
