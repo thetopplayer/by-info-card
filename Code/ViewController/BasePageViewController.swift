@@ -9,8 +9,6 @@
 import UIKit
 
 class BasePageViewController: UIViewController, EKPageScrolling {
-
-    weak var delegate: EKPageScrolling?
     
     override func viewDidLoad() {
      

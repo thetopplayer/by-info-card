@@ -24,6 +24,11 @@ class WelcomeViewController: UIViewController {
         super.viewDidLoad()
         
         configureLabels()
+        self.view.hidden = true
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        animateWelcomeScene()
     }
     
     // MARK: - Configure
@@ -41,29 +46,51 @@ class WelcomeViewController: UIViewController {
         self.mainLabel.font = UIFont.font(BYFontType.Light, fontSize: 80)
     }
     
+    // MARK: - Animate
+    
+    func animateWelcomeScene() {
+        
+        // Pre-animation setup
+        let preScale: CGFloat = 1.5
+        self.view.transform = CGAffineTransformMakeScale(preScale, preScale)
+        self.view.hidden = false
+        
+        // Animate
+        UIView.animateWithDuration(
+            0.8,
+            delay: 0,
+            usingSpringWithDamping: 0.7,
+            initialSpringVelocity: 0,
+            options: UIViewAnimationOptions.CurveEaseIn,
+            animations: { () -> Void in
+                self.view.transform = CGAffineTransformIdentity
+        }, completion: nil)
+    }
+    
+    // MARK: - Begin Form
 
     @IBAction func beginWithNewAttendee(sender: AnyObject) {
-        self.animateAndEnter(BYUserType.New, buttonSelected: sender as! UIButton)
+        self.animateAndBeginForm(BYUserType.New, buttonSelected: sender as! UIButton)
     }
     
     @IBAction func beginWithSeldomAttendee(sender: AnyObject) {
-        self.animateAndEnter(BYUserType.Sometimes, buttonSelected: sender as! UIButton)
+        self.animateAndBeginForm(BYUserType.Sometimes, buttonSelected: sender as! UIButton)
     }
 
     @IBAction func beginWithRegularAttendee(sender: AnyObject) {
-        self.animateAndEnter(BYUserType.Regular, buttonSelected: sender as! UIButton)
+        self.animateAndBeginForm(BYUserType.Regular, buttonSelected: sender as! UIButton)
     }
     
-    private func animateAndEnter(userType: BYUserType, buttonSelected button: UIButton) {
+    private func animateAndBeginForm(userType: BYUserType, buttonSelected button: UIButton) {
         
         // TODO: Do some animations here
         
         UIView.animateWithDuration(
-            0.3,
+            0.2,
             delay: 0,
             options: UIViewAnimationOptions.CurveEaseIn,
             animations: { () -> Void in
-                let scaleTransform: CGFloat = 1.5
+                let scaleTransform: CGFloat = 1.2
                 self.mainLabel.transform = CGAffineTransformMakeScale(scaleTransform, scaleTransform)
                 self.mainLabel.alpha = 0
                 self.welcomeLabel.transform = CGAffineTransformMakeScale(0, 0)
@@ -71,7 +98,7 @@ class WelcomeViewController: UIViewController {
                 button.transform = CGAffineTransformMakeScale(scaleTransform, scaleTransform)
                 for userTypeButton in self.userTypeButtons {
                     if userTypeButton != button {
-                        userTypeButton.transform = CGAffineTransformMakeScale(0, 0)
+                        userTypeButton.transform = CGAffineTransformMakeScale(0.5, 0.5)
                     }
                     userTypeButton.alpha = 0
                 }

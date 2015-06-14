@@ -9,10 +9,6 @@
 import UIKit
 
 
-protocol BYSubmissionFinishing: class {
-    func returnToWelcomeScreen();
-}
-
 class DoneViewController: BasePageViewController {
 
     @IBOutlet weak var thankYouLabel: UILabel!

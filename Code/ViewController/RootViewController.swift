@@ -31,7 +31,7 @@ class RootViewController: UIViewController, BYWelcomeProtocol, BYSubmissionFinis
     // MARK: Configure
     
     private func configureWelcomeScene() {
-        var welcomeVC = self.storyboard?.instantiateViewControllerWithIdentifier("WelcomeVC") as! WelcomeViewController
+        let welcomeVC = self.storyboard?.instantiateViewControllerWithIdentifier("WelcomeVC") as! WelcomeViewController
         welcomeVC.delegate = self
         self.addChildViewController(welcomeVC)
         self.view.addSubview(welcomeVC.view)
@@ -46,9 +46,10 @@ class RootViewController: UIViewController, BYWelcomeProtocol, BYSubmissionFinis
         
         self.submission = BYSubmission()
         
-        let containerVC = self.storyboard?.instantiateViewControllerWithIdentifier("ContainerVC") as! UIViewController
+        let containerVC = self.storyboard?.instantiateViewControllerWithIdentifier("ContainerVC") as! ContainerViewController
         self.addChildViewController(containerVC)
         containerVC.view.alpha = 0
+        containerVC.delegate = self
         self.view.addSubview(containerVC.view)
         containerVC.didMoveToParentViewController(self)
         
@@ -68,6 +69,6 @@ class RootViewController: UIViewController, BYWelcomeProtocol, BYSubmissionFinis
     // MARK: - BYSubmissionFinishing
     
     func returnToWelcomeScreen() {
-        
+        configureWelcomeScene()
     }
 }

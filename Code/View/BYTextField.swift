@@ -16,7 +16,7 @@ class BYTextField: UITextField {
     }
     
     func setup() {
-        self.backgroundColor = UIColor(white: 1.0, alpha: 0.3)
+        self.backgroundColor = UIColor(white: 1.0, alpha: 0.2)
         self.textColor = UIColor.whiteColor()
         self.font = UIFont.font(BYFontType.Normal, fontSize: 20)
         self.layer.borderWidth = 0

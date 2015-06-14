@@ -12,6 +12,8 @@ class ContainerViewController: UIViewController, UIScrollViewDelegate {
     
     @IBOutlet weak var scrollView: UIScrollView!
     
+    weak var delegate: BYSubmissionFinishing?
+    
     var pages = [UIViewController]()
     
     override func viewDidLoad() {
@@ -69,6 +71,32 @@ class ContainerViewController: UIViewController, UIScrollViewDelegate {
         return self.storyboard?.instantiateViewControllerWithIdentifier(identifier) as! BasePageViewController
     }
     
+    @IBAction func presentOptions(sender: UIView) {
+        let alertController = UIAlertController(title: nil, message: nil, preferredStyle: UIAlertControllerStyle.ActionSheet)
+        
+        let cancelAction = UIAlertAction(title: "Exit", style: UIAlertActionStyle.Destructive) { (action) -> Void in
+            
+            UIView.animateWithDuration(0.5, animations: { () -> Void in
+                self.view.transform = CGAffineTransformMakeScale(0.8, 0.8)
+                self.view.alpha = 0
+            }, completion: { (finished) -> Void in
+                self.willMoveToParentViewController(nil)
+                self.view.removeFromSuperview()
+                self.removeFromParentViewController()
+                self.delegate?.returnToWelcomeScreen()
+            })
+        }
+
+        alertController.addAction(cancelAction)
+        alertController.modalPresentationStyle = UIModalPresentationStyle.Popover
+        
+        let popoverController = alertController.popoverPresentationController
+        popoverController?.sourceView = sender
+        popoverController?.sourceRect = sender.bounds
+        
+        self.presentViewController(alertController, animated: true, completion: nil)
+    }
+
     // MARK: - UIScrollViewDelegate
     
     func scrollViewDidScroll(scrollView: UIScrollView) {

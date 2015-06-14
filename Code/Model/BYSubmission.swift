@@ -24,6 +24,11 @@ enum BYAgeGroup: Int {
     case Senior
 }
 
+struct AgeDemographic {
+    var ageGroup: String!
+    var ageRange: String!
+}
+
 class BYSubmission: NSObject {
     
     var userType: BYUserType?

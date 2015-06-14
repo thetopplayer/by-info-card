@@ -36,6 +36,9 @@
 		BAE6C34E1B2B585700B2CD50 /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE6C34D1B2B585700B2CD50 /* ContainerViewController.swift */; };
 		BAE6C3501B2B5C2300B2CD50 /* UIIView+EK.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE6C34F1B2B5C2300B2CD50 /* UIIView+EK.swift */; };
 		BAE6C3521B2B5E0500B2CD50 /* EKPageScrolling.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE6C3511B2B5E0500B2CD50 /* EKPageScrolling.swift */; };
+		BAE7199D1B2CDAF00060F31B /* Options@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BAE7199B1B2CDAF00060F31B /* Options@2x.png */; };
+		BAE7199E1B2CDAF00060F31B /* Options@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BAE7199C1B2CDAF00060F31B /* Options@3x.png */; };
+		BAE719A01B2CEFD10060F31B /* BYSubmissionFinishing.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE7199F1B2CEFD10060F31B /* BYSubmissionFinishing.swift */; };
 		BAE733C21B2409F000486B84 /* BYFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE733BD1B2409F000486B84 /* BYFont.swift */; };
 		BAE733C31B2409F000486B84 /* BYActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE733BF1B2409F000486B84 /* BYActionButton.swift */; };
 		BAE733C41B2409F000486B84 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE733C11B2409F000486B84 /* WelcomeViewController.swift */; };
@@ -88,6 +91,9 @@
 		BAE6C34D1B2B585700B2CD50 /* ContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
 		BAE6C34F1B2B5C2300B2CD50 /* UIIView+EK.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIIView+EK.swift"; sourceTree = "<group>"; };
 		BAE6C3511B2B5E0500B2CD50 /* EKPageScrolling.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EKPageScrolling.swift; sourceTree = "<group>"; };
+		BAE7199B1B2CDAF00060F31B /* Options@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Options@2x.png"; sourceTree = "<group>"; };
+		BAE7199C1B2CDAF00060F31B /* Options@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Options@3x.png"; sourceTree = "<group>"; };
+		BAE7199F1B2CEFD10060F31B /* BYSubmissionFinishing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BYSubmissionFinishing.swift; sourceTree = "<group>"; };
 		BAE733BD1B2409F000486B84 /* BYFont.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BYFont.swift; sourceTree = "<group>"; };
 		BAE733BF1B2409F000486B84 /* BYActionButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BYActionButton.swift; sourceTree = "<group>"; };
 		BAE733C11B2409F000486B84 /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
@@ -185,6 +191,8 @@
 		BA4212E41B1EEB2900571F81 /* Graphics */ = {
 			isa = PBXGroup;
 			children = (
+				BAE7199B1B2CDAF00060F31B /* Options@2x.png */,
+				BAE7199C1B2CDAF00060F31B /* Options@3x.png */,
 				BAA6838D1B2A5C63002C0868 /* Facebook@2x.png */,
 				BAA6838E1B2A5C63002C0868 /* Facebook@3x.png */,
 				BAA6838F1B2A5C63002C0868 /* Instagram@2x.png */,
@@ -204,6 +212,7 @@
 			isa = PBXGroup;
 			children = (
 				BAE6C3511B2B5E0500B2CD50 /* EKPageScrolling.swift */,
+				BAE7199F1B2CEFD10060F31B /* BYSubmissionFinishing.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -340,8 +349,10 @@
 				BAA683961B2A5C63002C0868 /* Instagram@3x.png in Resources */,
 				BAA683941B2A5C63002C0868 /* Facebook@3x.png in Resources */,
 				BAA683931B2A5C63002C0868 /* Facebook@2x.png in Resources */,
+				BAE7199E1B2CDAF00060F31B /* Options@3x.png in Resources */,
 				BAA6838C1B2A5B56002C0868 /* CheckboxSelected@3x.png in Resources */,
 				BA3E9A981B09701D00C87C41 /* Main.storyboard in Resources */,
+				BAE7199D1B2CDAF00060F31B /* Options@2x.png in Resources */,
 				BAA683801B2A014A002C0868 /* BYAgeTableViewCell.xib in Resources */,
 				BAA6838B1B2A5B56002C0868 /* CheckboxSelected@2x.png in Resources */,
 				BA3E9A9D1B09701D00C87C41 /* LaunchScreen.xib in Resources */,
@@ -383,6 +394,7 @@
 				BAE6C3521B2B5E0500B2CD50 /* EKPageScrolling.swift in Sources */,
 				BAE733C21B2409F000486B84 /* BYFont.swift in Sources */,
 				BAA6837F1B2A014A002C0868 /* BYAgeTableViewCell.swift in Sources */,
+				BAE719A01B2CEFD10060F31B /* BYSubmissionFinishing.swift in Sources */,
 				BAE733CB1B24166C00486B84 /* BYSubmission.swift in Sources */,
 				BAE6C34E1B2B585700B2CD50 /* ContainerViewController.swift in Sources */,
 				BAA683831B2A2389002C0868 /* BYCheckboxTableViewCell.swift in Sources */,

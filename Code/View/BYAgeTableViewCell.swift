@@ -15,7 +15,7 @@ class BYAgeTableViewCell: UITableViewCell {
     @IBOutlet weak var cardView: UIView!
     
     let defaultCardColor = UIColor(white: 0, alpha: 0.2)
-    let selectedCardColor = UIColor(white: 0, alpha: 0.5)
+    let selectedCardColor = UIColor(white: 0, alpha: 0.6)
     
     override func awakeFromNib() {
         super.awakeFromNib()

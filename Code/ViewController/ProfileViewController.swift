@@ -16,7 +16,8 @@ class ProfileViewController: BasePageViewController {
     @IBOutlet weak var nameField: BYTextField!
     @IBOutlet weak var emailField: BYTextField!
     @IBOutlet weak var phoneField: BYTextField!
-    
+
+    @IBOutlet weak var spacerHeightConstraint: NSLayoutConstraint!
     
     override func viewDidLoad() {
      
@@ -24,6 +25,7 @@ class ProfileViewController: BasePageViewController {
 
         configureLabels()
         configureTextFields()
+        configureKeyboardListeners()
     }
     
     // MARK: - Configure
@@ -53,5 +55,37 @@ class ProfileViewController: BasePageViewController {
         self.phoneField.keyboardType = UIKeyboardType.PhonePad
     }
     
+    // MARK: - Keyboard Listeners
+    
+    func configureKeyboardListeners() {
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillShow", name: UIKeyboardWillShowNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillHide", name: UIKeyboardWillHideNotification, object: nil)
+    }
+    
+    func keyboardWillShow() {
+        spacerHeightConstraint.constant = 25
+        UIView.animateWithDuration(
+            0.7,
+            delay: 0,
+            usingSpringWithDamping: 0.7,
+            initialSpringVelocity: 0,
+            options: UIViewAnimationOptions.CurveEaseIn,
+            animations: { () -> Void in
+                self.view.layoutIfNeeded()
+            }, completion: nil)
+    }
+    
+    func keyboardWillHide() {
+        spacerHeightConstraint.constant = 50
+        UIView.animateWithDuration(
+            0.7,
+            delay: 0,
+            usingSpringWithDamping: 0.7,
+            initialSpringVelocity: 0,
+            options: UIViewAnimationOptions.CurveEaseIn,
+            animations: { () -> Void in
+                self.view.layoutIfNeeded()
+        }, completion: nil)
+    }
     
 }

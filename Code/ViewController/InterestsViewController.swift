@@ -31,6 +31,45 @@ class InterestsViewController: BasePageViewController, UITableViewDataSource, UI
         self.configureTableView()
     }
     
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        self.tableView.hidden = true
+        self.headerLabel.alpha = 0
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        self.animateEntrance()
+    }
+    
+    // MARK: - Animation
+    
+    func animateEntrance() {
+        
+        UIView.animateWithDuration(0.5, animations: { () -> Void in
+            self.headerLabel.alpha = 1
+        })
+        
+        for cell in self.tableView.visibleCells() {
+            (cell as! UITableViewCell).transform = CGAffineTransformMakeScale(0, 0)
+        }
+        
+        self.tableView.hidden = false
+        
+        for i in 0..<self.interests.count {
+            var cell = self.tableView.visibleCells()[i] as! UITableViewCell
+            UIView.animateWithDuration(
+                0.7,
+                delay: Double(i) * 0.05,
+                usingSpringWithDamping: 0.8,
+                initialSpringVelocity: 0,
+                options: UIViewAnimationOptions.CurveEaseIn,
+                animations: { () -> Void in
+                    cell.transform = CGAffineTransformIdentity
+                }, completion: nil)
+        }
+    }
+    
     // MARK: - Configure
     
     func configureHeaderLabel() {
@@ -67,10 +106,6 @@ class InterestsViewController: BasePageViewController, UITableViewDataSource, UI
     }
     
     // MARK: - EKPageScrolling Delegate
-    
-    override func onScrollWithPageOnRight(offset: CGFloat) {
-        
-    }
     
     override func onScrollWithPageOnLeft(offset: CGFloat) {
         self.headerLabel.transform = CGAffineTransformMakeTranslation(offset * self.view.width, -self.view.height * offset * 0.2)

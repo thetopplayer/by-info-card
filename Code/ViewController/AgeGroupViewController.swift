@@ -14,24 +14,14 @@ class AgeGroupViewController: BasePageViewController, UITableViewDelegate, UITab
     @IBOutlet weak var tableView: UITableView!
     
     var selectedRow = -1
-    
-    
-    let demographicDict = [
-        BYAgeGroup.None: "Not Specified",
-        BYAgeGroup.HighSchool: "High School",
-        BYAgeGroup.College: "College & Young Adult",
-        BYAgeGroup.Adult: "Adult",
-        BYAgeGroup.Middle: "Middle Age",
-        BYAgeGroup.Senior: "Senior"
-    ]
-    
-    let ageRangesDict = [
-        BYAgeGroup.None: "NONE",
-        BYAgeGroup.HighSchool: "Ages 15 - 18",
-        BYAgeGroup.College: "Ages 19 - 25",
-        BYAgeGroup.Adult: "Ages 26 - 45",
-        BYAgeGroup.Middle: "Ages 46 - 60",
-        BYAgeGroup.Senior: "Ages 60+"
+
+    let demographics = [
+        BYAgeGroup.None: AgeDemographic(ageGroup: "Not Specified", ageRange: "NONE"),
+        BYAgeGroup.HighSchool: AgeDemographic(ageGroup: "High School", ageRange: "Ages 15- 18"),
+        BYAgeGroup.College: AgeDemographic(ageGroup: "College & Young Adult", ageRange: "Ages 19 - 25"),
+        BYAgeGroup.Adult: AgeDemographic(ageGroup: "Adult", ageRange: "Ages 26 - 45"),
+        BYAgeGroup.Middle: AgeDemographic(ageGroup: "Middle Age", ageRange: "Ages 46 - 60"),
+        BYAgeGroup.Senior: AgeDemographic(ageGroup: "Senior", ageRange: "Ages 60+")
     ]
     
     override func viewDidLoad() {
@@ -45,7 +35,7 @@ class AgeGroupViewController: BasePageViewController, UITableViewDelegate, UITab
     // MARK: - Configure
     
     func configureHeaderLabel() {
-        self.headerLabel.text = "To help us minister to you in a relevant and personal manner, select from the options below."
+        self.headerLabel.text = "To help us minister to you in a relevant and personal manner, please select your age group below (optional):"
         self.headerLabel.textColor = UIColor.whiteColor()
         self.headerLabel.font = UIFont.font(BYFontType.Light, fontSize: 30)
         self.headerLabel.numberOfLines = 0
@@ -70,14 +60,14 @@ class AgeGroupViewController: BasePageViewController, UITableViewDelegate, UITab
         
         // Configure cell
         let ageGroup = BYAgeGroup(rawValue: indexPath.row)!
-        cell.demographicLabel.text = demographicDict[ageGroup]
-        cell.ageRangeLabel.text = ageRangesDict[ageGroup]
+        cell.demographicLabel.text = demographics[ageGroup]?.ageGroup
+        cell.ageRangeLabel.text = demographics[ageGroup]?.ageRange
         
         return cell
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return self.demographics.count-1
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
@@ -88,6 +78,16 @@ class AgeGroupViewController: BasePageViewController, UITableViewDelegate, UITab
             self.selectedRow = -1
         } else {
             selectedRow = indexPath.row
+        }
+    }
+    
+    // MARK: - EKPageScrollingDelegate
+    
+    override func onScrollWithPageOnRight(offset: CGFloat) {
+        self.headerLabel.transform = CGAffineTransformMakeTranslation(-offset * self.view.width, -self.view.height * offset * 0.3)
+        for i in 0..<self.demographics.count-1 {
+            let cell = self.tableView.visibleCells()[i] as! UITableViewCell
+            cell.transform = CGAffineTransformMakeTranslation(CGFloat(i) * offset * 150, 0)
         }
     }
 }
