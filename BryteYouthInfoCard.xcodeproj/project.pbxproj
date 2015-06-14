@@ -39,6 +39,7 @@
 		BAE7199D1B2CDAF00060F31B /* Options@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BAE7199B1B2CDAF00060F31B /* Options@2x.png */; };
 		BAE7199E1B2CDAF00060F31B /* Options@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BAE7199C1B2CDAF00060F31B /* Options@3x.png */; };
 		BAE719A01B2CEFD10060F31B /* BYSubmissionFinishing.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE7199F1B2CEFD10060F31B /* BYSubmissionFinishing.swift */; };
+		BAE719A41B2D08860060F31B /* BYLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = BAE719A31B2D08860060F31B /* BYLogo.png */; };
 		BAE733C21B2409F000486B84 /* BYFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE733BD1B2409F000486B84 /* BYFont.swift */; };
 		BAE733C31B2409F000486B84 /* BYActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE733BF1B2409F000486B84 /* BYActionButton.swift */; };
 		BAE733C41B2409F000486B84 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE733C11B2409F000486B84 /* WelcomeViewController.swift */; };
@@ -94,6 +95,7 @@
 		BAE7199B1B2CDAF00060F31B /* Options@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Options@2x.png"; sourceTree = "<group>"; };
 		BAE7199C1B2CDAF00060F31B /* Options@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Options@3x.png"; sourceTree = "<group>"; };
 		BAE7199F1B2CEFD10060F31B /* BYSubmissionFinishing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BYSubmissionFinishing.swift; sourceTree = "<group>"; };
+		BAE719A31B2D08860060F31B /* BYLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BYLogo.png; sourceTree = "<group>"; };
 		BAE733BD1B2409F000486B84 /* BYFont.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BYFont.swift; sourceTree = "<group>"; };
 		BAE733BF1B2409F000486B84 /* BYActionButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BYActionButton.swift; sourceTree = "<group>"; };
 		BAE733C11B2409F000486B84 /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
@@ -191,6 +193,7 @@
 		BA4212E41B1EEB2900571F81 /* Graphics */ = {
 			isa = PBXGroup;
 			children = (
+				BAE719A31B2D08860060F31B /* BYLogo.png */,
 				BAE7199B1B2CDAF00060F31B /* Options@2x.png */,
 				BAE7199C1B2CDAF00060F31B /* Options@3x.png */,
 				BAA6838D1B2A5C63002C0868 /* Facebook@2x.png */,
@@ -359,6 +362,7 @@
 				BAA683981B2A5C63002C0868 /* Twitter@3x.png in Resources */,
 				BAA683871B2A2689002C0868 /* Checkbox@2x.png in Resources */,
 				BAA683881B2A2689002C0868 /* Checkbox@3x.png in Resources */,
+				BAE719A41B2D08860060F31B /* BYLogo.png in Resources */,
 				BAA683971B2A5C63002C0868 /* Twitter@2x.png in Resources */,
 				BAA683951B2A5C63002C0868 /* Instagram@2x.png in Resources */,
 			);

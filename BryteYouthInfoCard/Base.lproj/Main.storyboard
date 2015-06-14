@@ -44,30 +44,17 @@
                         <viewControllerLayoutGuide type="bottom" id="MDC-A4-3Vp"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="YoG-Ti-wk6">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="800"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BRYTE YOUTH" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nha-M6-lfT">
-                                <rect key="frame" x="241" y="260" width="118" height="20.5"/>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4yP-UR-Aze">
+                                <rect key="frame" x="254" y="139.5" width="91" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4yP-UR-Aze">
-                                <rect key="frame" x="254" y="234.5" width="91" height="20.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fQq-YR-OOg">
-                                <rect key="frame" x="239" y="106.5" width="120" height="120"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="120" id="QQQ-ef-jhw"/>
-                                    <constraint firstAttribute="width" secondItem="fQq-YR-OOg" secondAttribute="height" multiplier="1:1" id="taL-8E-DGT"/>
-                                </constraints>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tGQ-jj-nbR" customClass="BYActionButton" customModule="BryteYouthInfoCard" customModuleProvider="target">
-                                <rect key="frame" x="125" y="310" width="350" height="75"/>
+                                <rect key="frame" x="125" y="508" width="350" height="75"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="75" id="Y9e-TS-vQc"/>
                                     <constraint firstAttribute="width" constant="350" id="pho-iS-LZR"/>
@@ -80,13 +67,13 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kgZ-Kf-vsq">
-                                <rect key="frame" x="16" y="385" width="568" height="20"/>
+                                <rect key="frame" x="16" y="583" width="568" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="Fvd-pL-YQP"/>
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UL1-ek-BM4" customClass="BYActionButton" customModule="BryteYouthInfoCard" customModuleProvider="target">
-                                <rect key="frame" x="125" y="405" width="350" height="75"/>
+                                <rect key="frame" x="125" y="603" width="350" height="75"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="0Cl-32-3In"/>
                                     <constraint firstAttribute="width" constant="350" id="hLs-gz-MPE"/>
@@ -105,7 +92,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VcN-mE-8nD" customClass="BYActionButton" customModule="BryteYouthInfoCard" customModuleProvider="target">
-                                <rect key="frame" x="125" y="500.5" width="350" height="75"/>
+                                <rect key="frame" x="125" y="698.5" width="350" height="75"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="350" id="WAI-lS-Jza"/>
                                     <constraint firstAttribute="height" constant="60" id="uG4-J4-OD5"/>
@@ -124,7 +111,7 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="llQ-0F-fzs">
-                                <rect key="frame" x="16" y="480" width="568" height="20"/>
+                                <rect key="frame" x="16" y="678" width="568" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="10" id="nkd-Y4-5DV"/>
                                 </constraints>
@@ -134,6 +121,15 @@
                                     </mask>
                                 </variation>
                             </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BYLogo.png" translatesAutoresizingMaskIntoConstraints="NO" id="fQq-YR-OOg">
+                                <rect key="frame" x="149" y="180" width="300" height="300"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="QQQ-ef-jhw">
+                                        <variation key="heightClass=regular-widthClass=regular" constant="350"/>
+                                    </constraint>
+                                    <constraint firstAttribute="width" secondItem="fQq-YR-OOg" secondAttribute="height" multiplier="1:1" id="taL-8E-DGT"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -141,35 +137,39 @@
                             <constraint firstItem="UL1-ek-BM4" firstAttribute="height" secondItem="tGQ-jj-nbR" secondAttribute="height" id="1yy-fg-eyb"/>
                             <constraint firstItem="kgZ-Kf-vsq" firstAttribute="trailing" secondItem="YoG-Ti-wk6" secondAttribute="trailingMargin" id="6AE-Mu-IDV"/>
                             <constraint firstAttribute="centerX" secondItem="VcN-mE-8nD" secondAttribute="centerX" id="9AW-1P-p1t"/>
-                            <constraint firstAttribute="centerX" secondItem="Nha-M6-lfT" secondAttribute="centerX" id="C75-hE-VqR"/>
                             <constraint firstAttribute="centerX" secondItem="fQq-YR-OOg" secondAttribute="centerX" constant="1" id="CM7-16-M9G"/>
                             <constraint firstItem="llQ-0F-fzs" firstAttribute="leading" secondItem="YoG-Ti-wk6" secondAttribute="leadingMargin" id="EqK-US-eSN"/>
                             <constraint firstItem="tGQ-jj-nbR" firstAttribute="width" secondItem="VcN-mE-8nD" secondAttribute="width" id="LG8-eq-ub7"/>
-                            <constraint firstAttribute="centerY" secondItem="Nha-M6-lfT" secondAttribute="centerY" constant="30" id="OGV-NI-sUL"/>
-                            <constraint firstItem="tGQ-jj-nbR" firstAttribute="top" secondItem="Nha-M6-lfT" secondAttribute="bottom" constant="30" id="QrQ-8l-Idw"/>
+                            <constraint firstItem="fQq-YR-OOg" firstAttribute="top" secondItem="4yP-UR-Aze" secondAttribute="bottom" constant="20" id="Qm9-On-94p">
+                                <variation key="widthClass=regular" constant="0.0"/>
+                            </constraint>
                             <constraint firstItem="llQ-0F-fzs" firstAttribute="height" secondItem="kgZ-Kf-vsq" secondAttribute="height" id="TN4-To-Rg4"/>
                             <constraint firstAttribute="centerX" secondItem="UL1-ek-BM4" secondAttribute="centerX" id="Xtj-AG-Bet"/>
                             <constraint firstItem="4yP-UR-Aze" firstAttribute="top" secondItem="fQq-YR-OOg" secondAttribute="bottom" constant="8.5" id="Ytl-Zs-o3T"/>
                             <constraint firstItem="VcN-mE-8nD" firstAttribute="leading" secondItem="YoG-Ti-wk6" secondAttribute="leadingMargin" constant="109" id="YzO-mr-prr"/>
                             <constraint firstItem="kgZ-Kf-vsq" firstAttribute="top" secondItem="tGQ-jj-nbR" secondAttribute="bottom" id="ZOm-Ej-R3U"/>
+                            <constraint firstItem="tGQ-jj-nbR" firstAttribute="top" secondItem="fQq-YR-OOg" secondAttribute="bottom" constant="28" id="bG6-ZB-5gi"/>
                             <constraint firstItem="UL1-ek-BM4" firstAttribute="width" secondItem="tGQ-jj-nbR" secondAttribute="width" id="hxM-HL-fUa"/>
-                            <constraint firstItem="Nha-M6-lfT" firstAttribute="top" secondItem="4yP-UR-Aze" secondAttribute="bottom" constant="5" id="mRv-kF-3vp"/>
                             <constraint firstAttribute="centerX" secondItem="tGQ-jj-nbR" secondAttribute="centerX" id="nuY-ky-4Db"/>
                             <constraint firstAttribute="centerX" secondItem="4yP-UR-Aze" secondAttribute="centerX" id="rAT-a3-Ida"/>
                             <constraint firstItem="tGQ-jj-nbR" firstAttribute="height" secondItem="VcN-mE-8nD" secondAttribute="height" id="s6H-pL-cEb"/>
                             <constraint firstItem="llQ-0F-fzs" firstAttribute="trailing" secondItem="YoG-Ti-wk6" secondAttribute="trailingMargin" id="v6b-JE-slv"/>
                             <constraint firstItem="llQ-0F-fzs" firstAttribute="top" secondItem="UL1-ek-BM4" secondAttribute="bottom" id="vKh-02-yBL"/>
                             <constraint firstItem="UL1-ek-BM4" firstAttribute="top" secondItem="kgZ-Kf-vsq" secondAttribute="bottom" id="w98-yE-Nr1"/>
+                            <constraint firstAttribute="centerY" secondItem="fQq-YR-OOg" secondAttribute="centerY" constant="70" id="wIO-lT-ZdY">
+                                <variation key="widthClass=regular" constant="100"/>
+                                <variation key="heightClass=regular-widthClass=regular" constant="150"/>
+                            </constraint>
                             <constraint firstItem="kgZ-Kf-vsq" firstAttribute="leading" secondItem="YoG-Ti-wk6" secondAttribute="leadingMargin" id="z9H-fG-D4y"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
+                                <exclude reference="Ytl-Zs-o3T"/>
                                 <exclude reference="YzO-mr-prr"/>
                             </mask>
                         </variation>
                     </view>
                     <connections>
-                        <outlet property="mainLabel" destination="Nha-M6-lfT" id="6sM-p6-4q7"/>
                         <outlet property="welcomeLabel" destination="4yP-UR-Aze" id="p1G-Q1-yBR"/>
                         <outletCollection property="userTypeButtons" destination="tGQ-jj-nbR" collectionClass="NSMutableArray" id="wyy-B9-TR8"/>
                         <outletCollection property="userTypeButtons" destination="UL1-ek-BM4" collectionClass="NSMutableArray" id="RXY-A9-83n"/>
@@ -599,8 +599,6 @@
                             </mask>
                         </variation>
                     </view>
-                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="600" height="600"/>
                     <connections>
                         <outlet property="emailField" destination="9St-v2-lQm" id="Wfx-lr-fWP"/>
                         <outlet property="nameField" destination="sPM-7t-A4e" id="49q-AD-LOM"/>
@@ -620,6 +618,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="BYLogo.png" width="1000" height="800"/>
         <image name="Background.png" width="2048" height="1536"/>
         <image name="Facebook.png" width="100" height="100"/>
         <image name="Instagram.png" width="100" height="100"/>

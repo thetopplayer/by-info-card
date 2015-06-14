@@ -15,7 +15,6 @@ protocol BYWelcomeProtocol: class {
 class WelcomeViewController: UIViewController {
 
     @IBOutlet weak var welcomeLabel: UILabel!
-    @IBOutlet weak var mainLabel: UILabel!
     @IBOutlet var userTypeButtons: [BYActionButton]!
     weak var delegate: BYWelcomeProtocol?
     
@@ -23,7 +22,7 @@ class WelcomeViewController: UIViewController {
 
         super.viewDidLoad()
         
-        configureLabels()
+        configureLabel()
         self.view.hidden = true
     }
     
@@ -33,17 +32,12 @@ class WelcomeViewController: UIViewController {
     
     // MARK: - Configure
     
-    private func configureLabels() {
+    private func configureLabel() {
         
         self.welcomeLabel.text = "Welcome to"
         self.welcomeLabel.textColor = UIColor.whiteColor()
         self.welcomeLabel.textAlignment = .Center
-        self.welcomeLabel.font = UIFont.font(BYFontType.LightItalic, fontSize: 40)
-        
-        self.mainLabel.text = "BRYTE YOUTH"
-        self.mainLabel.textColor = UIColor.whiteColor()
-        self.mainLabel.textAlignment = .Center
-        self.mainLabel.font = UIFont.font(BYFontType.Light, fontSize: 80)
+        self.welcomeLabel.font = UIFont.font(BYFontType.LightItalic, fontSize: 30)
     }
     
     // MARK: - Animate
@@ -91,8 +85,6 @@ class WelcomeViewController: UIViewController {
             options: UIViewAnimationOptions.CurveEaseIn,
             animations: { () -> Void in
                 let scaleTransform: CGFloat = 1.2
-                self.mainLabel.transform = CGAffineTransformMakeScale(scaleTransform, scaleTransform)
-                self.mainLabel.alpha = 0
                 self.welcomeLabel.transform = CGAffineTransformMakeScale(0, 0)
                 self.welcomeLabel.alpha = 0
                 button.transform = CGAffineTransformMakeScale(scaleTransform, scaleTransform)
