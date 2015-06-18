@@ -90,4 +90,15 @@ class AgeGroupViewController: BasePageViewController, UITableViewDelegate, UITab
             cell.transform = CGAffineTransformMakeTranslation(CGFloat(i) * offset * 150, 0)
         }
     }
+    
+    // MARK: - Submit
+    
+    @IBAction func submitForm(sender: AnyObject) {
+        
+        
+        // TODO: send off to database or email
+        
+        (self.parentViewController as! ContainerViewController).submitForm()
+    }
+    
 }

@@ -21,11 +21,14 @@ class DoneViewController: BasePageViewController {
         super.viewDidLoad()
 
         self.configureLabels()
+        self.view.hidden = true
+        self.view.backgroundColor = UIColor.clearColor()
     }
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        self.animateExit()
+        self.animateEntrance()
+        NSTimer.scheduledTimerWithTimeInterval(8.0, target: self, selector: "animateExit", userInfo: nil, repeats: false)
     }
     
     // MARK: - Configure
@@ -48,17 +51,42 @@ class DoneViewController: BasePageViewController {
         self.getConnectedLabel.font = UIFont.font(BYFontType.LightItalic, fontSize: 30)
     }
     
+    // MARK: - Animations
+    
+    func animateEntrance() {
+        
+        self.view.transform = CGAffineTransformMakeScale(0, 0)
+        self.view.hidden = false
+        
+        UIView.animateWithDuration(
+            0.9,
+            delay: 0,
+            usingSpringWithDamping: 0.7,
+            initialSpringVelocity: 0,
+            options: UIViewAnimationOptions.CurveEaseIn,
+            animations: { () -> Void in
+                self.view.transform = CGAffineTransformIdentity
+        }) { (finished) -> Void in
+            
+        }
+    }
+    
     func animateExit() {
         UIView.animateWithDuration(
-            0.7,
-            delay: 5.0,
+            0.8,
+            delay: 0,
             usingSpringWithDamping: 0.7,
             initialSpringVelocity: 0,
             options: UIViewAnimationOptions.CurveEaseOut,
             animations: { () -> Void in
-                // TODO: add animations here
+                let scale: CGFloat = 0.8
+                self.view.transform = CGAffineTransformMakeScale(scale, scale)
+                self.view.alpha = 0
             }) { (finished: Bool) -> Void in
-            self.submissionDelegate?.returnToWelcomeScreen()
+                self.willMoveToParentViewController(nil)
+                self.view.removeFromSuperview()
+                self.removeFromParentViewController()
+                self.submissionDelegate?.returnToWelcomeScreen()
         }
     }
     

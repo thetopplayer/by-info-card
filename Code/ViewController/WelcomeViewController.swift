@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol BYWelcomeProtocol: class {
+protocol BYWelcomeTransitioning: class {
     func goToForm(userType: BYUserType);
 }
 
@@ -17,7 +17,7 @@ class WelcomeViewController: UIViewController {
     @IBOutlet weak var welcomeLabel: UILabel!
     @IBOutlet weak var logoImageView: UIImageView!
     @IBOutlet var userTypeButtons: [BYActionButton]!
-    weak var delegate: BYWelcomeProtocol?
+    weak var welcomeDelegate: BYWelcomeTransitioning?
     
     override func viewDidLoad() {
 
@@ -25,6 +25,7 @@ class WelcomeViewController: UIViewController {
         
         configureLabel()
         self.view.hidden = true
+        self.view.backgroundColor = UIColor.clearColor()
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -101,7 +102,7 @@ class WelcomeViewController: UIViewController {
             self.willMoveToParentViewController(nil)
             self.view.removeFromSuperview()
             self.removeFromParentViewController()
-            self.delegate?.goToForm(userType)
+            self.welcomeDelegate?.goToForm(userType)
         };
     }
 }

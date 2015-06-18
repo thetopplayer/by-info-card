@@ -12,4 +12,6 @@ import Foundation
 protocol BYSubmissionFinishing: class {
     
     func returnToWelcomeScreen();
+    
+    func goToThankYouScreen();
 }

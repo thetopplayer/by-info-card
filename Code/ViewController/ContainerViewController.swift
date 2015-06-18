@@ -12,8 +12,8 @@ class ContainerViewController: UIViewController, UIScrollViewDelegate {
     
     @IBOutlet weak var scrollView: UIScrollView!
     
+    var submission: BYSubmission?
     weak var delegate: BYSubmissionFinishing?
-    
     var pages = [UIViewController]()
     
     override func viewDidLoad() {
@@ -56,7 +56,6 @@ class ContainerViewController: UIViewController, UIScrollViewDelegate {
         self.pages.append(self.pageViewController("InterestsVC"))
         self.pages.append(self.pageViewController("ProfileVC"))
         self.pages.append(self.pageViewController("AgeGroupVC"))
-        
         
         // Add pages as child view controllers
         for i in 0..<self.pages.count {
@@ -123,6 +122,21 @@ class ContainerViewController: UIViewController, UIScrollViewDelegate {
         if rightPageIndex < self.pages.count {
             (self.pages[rightPageIndex] as! EKPageScrolling).onScrollWithPageOnRight(rightOffset)
         }
+    }
+    
+    // MARK: - Submission
+    
+    func submitForm() {
+        UIView.animateWithDuration(0.5, animations: { () -> Void in
+            let scale: CGFloat = 1.2;
+            self.view.transform = CGAffineTransformMakeScale(scale, scale)
+            self.view.alpha = 0
+            }, completion: { (finished) -> Void in
+                self.willMoveToParentViewController(nil)
+                self.view.removeFromSuperview()
+                self.removeFromParentViewController()
+                self.delegate?.goToThankYouScreen()
+        })
     }
 }
 

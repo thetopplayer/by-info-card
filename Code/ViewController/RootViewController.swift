@@ -16,35 +16,29 @@ enum BYPageType {
     case Done
 }
 
-class RootViewController: UIViewController, BYWelcomeProtocol, BYSubmissionFinishing {
-    
-    var submission: BYSubmission?
+class RootViewController: UIViewController, BYWelcomeTransitioning, BYSubmissionFinishing {
     
     override func viewDidLoad() {
 
         super.viewDidLoad()
 
         configureWelcomeScene()
-        
     }
     
     // MARK: Configure
     
     private func configureWelcomeScene() {
         let welcomeVC = self.storyboard?.instantiateViewControllerWithIdentifier("WelcomeVC") as! WelcomeViewController
-        welcomeVC.delegate = self
+        welcomeVC.welcomeDelegate = self
         self.addChildViewController(welcomeVC)
         self.view.addSubview(welcomeVC.view)
         welcomeVC.view.frame = self.view.frame
-        welcomeVC.view.backgroundColor = UIColor.clearColor()
         welcomeVC.didMoveToParentViewController(self)
     }
     
     // MARK: - BYWelcomeProtocol
     
     func goToForm(userType: BYUserType) {
-        
-        self.submission = BYSubmission()
         
         let containerVC = self.storyboard?.instantiateViewControllerWithIdentifier("ContainerVC") as! ContainerViewController
         self.addChildViewController(containerVC)
@@ -70,5 +64,15 @@ class RootViewController: UIViewController, BYWelcomeProtocol, BYSubmissionFinis
     
     func returnToWelcomeScreen() {
         configureWelcomeScene()
+    }
+    
+    func goToThankYouScreen() {
+        
+        let doneVC = self.storyboard?.instantiateViewControllerWithIdentifier("DoneVC") as! DoneViewController
+        doneVC.submissionDelegate = self
+        self.addChildViewController(doneVC)
+        self.view.addSubview(doneVC.view)
+        doneVC.view.frame = self.view.frame
+        doneVC.didMoveToParentViewController(self)
     }
 }
