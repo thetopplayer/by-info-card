@@ -18,13 +18,13 @@
                         <rect key="frame" x="27" y="8" width="450" height="71.5"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Age" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LDr-nq-Myb">
-                                <rect key="frame" x="210" y="28.5" width="30.5" height="20.5"/>
+                                <rect key="frame" x="210" y="23.5" width="30.5" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Demographic" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="boL-bE-2Jq">
-                                <rect key="frame" x="173" y="8" width="103.5" height="20.5"/>
+                                <rect key="frame" x="173" y="3" width="103.5" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -32,7 +32,7 @@
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="boL-bE-2Jq" firstAttribute="top" secondItem="eoG-4B-9xG" secondAttribute="top" constant="8" id="KaT-4M-OQ9"/>
+                            <constraint firstItem="boL-bE-2Jq" firstAttribute="top" secondItem="eoG-4B-9xG" secondAttribute="top" constant="3" id="KaT-4M-OQ9"/>
                             <constraint firstAttribute="centerX" secondItem="LDr-nq-Myb" secondAttribute="centerX" id="Q1f-Q7-2hY"/>
                             <constraint firstItem="LDr-nq-Myb" firstAttribute="top" secondItem="boL-bE-2Jq" secondAttribute="bottom" id="f78-1m-aMK"/>
                             <constraint firstAttribute="centerX" secondItem="boL-bE-2Jq" secondAttribute="centerX" constant="-0.25" id="ytJ-zz-rJZ"/>

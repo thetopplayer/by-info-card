@@ -19,6 +19,9 @@ class ProfileViewController: BasePageViewController {
 
     @IBOutlet weak var spacerHeightConstraint: NSLayoutConstraint!
     
+    let defaultSpacerHeight: CGFloat = 50
+    let reducedSpacerHeight: CGFloat = 30
+    
     override func viewDidLoad() {
      
         super.viewDidLoad()
@@ -63,7 +66,7 @@ class ProfileViewController: BasePageViewController {
     }
     
     func keyboardWillShow() {
-        spacerHeightConstraint.constant = 25
+        spacerHeightConstraint.constant = reducedSpacerHeight
         UIView.animateWithDuration(
             0.7,
             delay: 0,
@@ -76,7 +79,7 @@ class ProfileViewController: BasePageViewController {
     }
     
     func keyboardWillHide() {
-        spacerHeightConstraint.constant = 50
+        spacerHeightConstraint.constant = defaultSpacerHeight
         UIView.animateWithDuration(
             0.7,
             delay: 0,
@@ -86,6 +89,16 @@ class ProfileViewController: BasePageViewController {
             animations: { () -> Void in
                 self.view.layoutIfNeeded()
         }, completion: nil)
+    }
+    
+    // MARK: - EKPageScrolling
+    
+    override func onScrollWithPageOnRight(offset: CGFloat) {
+        spacerHeightConstraint.constant = defaultSpacerHeight + (50 * offset)
+    }
+    
+    override func onScrollWithPageOnLeft(offset: CGFloat) {
+        spacerHeightConstraint.constant = defaultSpacerHeight + (50 * offset)
     }
     
 }

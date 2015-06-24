@@ -46,7 +46,7 @@ class AgeGroupViewController: BasePageViewController, UITableViewDelegate, UITab
         self.tableView.backgroundColor = UIColor.clearColor()
         self.tableView.delegate = self
         self.tableView.dataSource = self
-        self.tableView.rowHeight = 100
+        self.tableView.rowHeight = 90
         self.tableView.separatorStyle = UITableViewCellSeparatorStyle.None
         self.tableView.bounces = false
     }
@@ -97,6 +97,12 @@ class AgeGroupViewController: BasePageViewController, UITableViewDelegate, UITab
         
         
         // TODO: send off to database or email
+        
+
+        
+        APIWrapperSubmit().submitToAPI(BYSubmission(), completion: { (success, message) -> Void in
+            
+        })
         
         (self.parentViewController as! ContainerViewController).submitForm()
     }

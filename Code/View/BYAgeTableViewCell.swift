@@ -53,7 +53,7 @@ class BYAgeTableViewCell: UITableViewCell {
         
         self.demographicLabel.textAlignment = .Center
         self.demographicLabel.textColor = UIColor.whiteColor()
-        self.demographicLabel.font = UIFont.font(BYFontType.Light, fontSize: 30)
+        self.demographicLabel.font = UIFont.font(BYFontType.Normal, fontSize: 26)
         
         self.ageRangeLabel.textAlignment = .Center
         self.ageRangeLabel.textColor = UIColor.whiteColor()

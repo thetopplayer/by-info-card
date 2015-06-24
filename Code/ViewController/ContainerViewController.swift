@@ -11,10 +11,13 @@ import UIKit
 class ContainerViewController: UIViewController, UIScrollViewDelegate {
     
     @IBOutlet weak var scrollView: UIScrollView!
-    
+    @IBOutlet weak var swipeTipLabel: UILabel!
+    @IBOutlet weak var pageControl: UIPageControl!
     var submission: BYSubmission?
     weak var delegate: BYSubmissionFinishing?
     var pages = [UIViewController]()
+    
+    let defaultSwipeLabelAlpha: CGFloat = 0.7
     
     override func viewDidLoad() {
         
@@ -22,6 +25,8 @@ class ContainerViewController: UIViewController, UIScrollViewDelegate {
         
         configurePages()
         configureScrollView()
+        configureKeyboardListeners()
+        configureSwipeRightLabel()
     }
     
     override func viewDidLayoutSubviews() {
@@ -41,12 +46,23 @@ class ContainerViewController: UIViewController, UIScrollViewDelegate {
     
     // MARK: - Configure
     
+    private func configureSwipeRightLabel() {
+        self.swipeTipLabel.text = "Swipe to continue"
+        self.swipeTipLabel.textColor = UIColor.whiteColor()
+        self.swipeTipLabel.font = UIFont.font(BYFontType.Light, fontSize: 20)
+        self.swipeTipLabel.alpha = defaultSwipeLabelAlpha
+    }
+    
     private func configureScrollView() {
         self.scrollView.pagingEnabled = true
         self.scrollView.delegate = self
         self.scrollView.backgroundColor = UIColor(white: 0, alpha: 0.5)
         self.scrollView.indicatorStyle = UIScrollViewIndicatorStyle.White
         self.scrollView.backgroundColor = UIColor.clearColor()
+        
+        self.pageControl.numberOfPages = self.pages.count
+        self.pageControl.currentPage = 0
+        
         self.view.backgroundColor = UIColor.clearColor()
     }
     
@@ -122,6 +138,11 @@ class ContainerViewController: UIViewController, UIScrollViewDelegate {
         if rightPageIndex < self.pages.count {
             (self.pages[rightPageIndex] as! EKPageScrolling).onScrollWithPageOnRight(rightOffset)
         }
+        
+        // Update page control
+        self.pageControl.currentPage = lround(Double(positionX))
+        
+        self.swipeTipLabel.alpha = defaultSwipeLabelAlpha - positionX
     }
     
     // MARK: - Submission
@@ -137,6 +158,21 @@ class ContainerViewController: UIViewController, UIScrollViewDelegate {
                 self.removeFromParentViewController()
                 self.delegate?.goToThankYouScreen()
         })
+    }
+    
+    // MARK: - Keyboard Listeners
+    
+    func configureKeyboardListeners() {
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillShow", name: UIKeyboardWillShowNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardDidHide", name: UIKeyboardDidHideNotification, object: nil)
+    }
+    
+    func keyboardWillShow() {
+        self.scrollView.scrollEnabled = false
+    }
+    
+    func keyboardDidHide() {
+        self.scrollView.scrollEnabled = true
     }
 }
 
