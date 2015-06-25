@@ -19,8 +19,12 @@ class ProfileViewController: BasePageViewController {
 
     @IBOutlet weak var spacerHeightConstraint: NSLayoutConstraint!
     
-    let defaultSpacerHeight: CGFloat = 50
-    let reducedSpacerHeight: CGFloat = 30
+    private let defaultSpacerHeight: CGFloat = 50
+    private let reducedSpacerHeight: CGFloat = 30
+    
+    private var tapToDismissRecognizer: UITapGestureRecognizer! {
+        return UITapGestureRecognizer(target: self, action: "dismissKeyboard")
+    }
     
     override func viewDidLoad() {
      
@@ -28,7 +32,16 @@ class ProfileViewController: BasePageViewController {
 
         configureLabels()
         configureTextFields()
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
         configureKeyboardListeners()
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        removeKeyboardListeners()
     }
     
     // MARK: - Configure
@@ -65,6 +78,10 @@ class ProfileViewController: BasePageViewController {
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillHide", name: UIKeyboardWillHideNotification, object: nil)
     }
     
+    private func removeKeyboardListeners() {
+        NSNotificationCenter.defaultCenter().removeObserver(self)
+    }
+    
     func keyboardWillShow() {
         spacerHeightConstraint.constant = reducedSpacerHeight
         UIView.animateWithDuration(
@@ -76,6 +93,7 @@ class ProfileViewController: BasePageViewController {
             animations: { () -> Void in
                 self.view.layoutIfNeeded()
             }, completion: nil)
+        self.view.addGestureRecognizer(self.tapToDismissRecognizer)
     }
     
     func keyboardWillHide() {
@@ -89,6 +107,13 @@ class ProfileViewController: BasePageViewController {
             animations: { () -> Void in
                 self.view.layoutIfNeeded()
         }, completion: nil)
+        self.view.removeGestureRecognizer(self.tapToDismissRecognizer)
+    }
+    
+    @objc private func dismissKeyboard() {
+        for textField in self.textFields {
+            textField.resignFirstResponder()
+        }
     }
     
     // MARK: - EKPageScrolling
