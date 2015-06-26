@@ -100,7 +100,6 @@ class AgeGroupViewController: BasePageViewController, UITableViewDelegate, UITab
         
         
         
-        
         APIWrapperSubmit().submitToAPI(BYSubmission(), completion: { (success, message) -> Void in
             
             
