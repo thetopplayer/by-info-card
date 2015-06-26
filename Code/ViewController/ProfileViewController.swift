@@ -73,7 +73,7 @@ class ProfileViewController: BasePageViewController {
     
     // MARK: - Keyboard Listeners
     
-    func configureKeyboardListeners() {
+    private func configureKeyboardListeners() {
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillShow", name: UIKeyboardWillShowNotification, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillHide", name: UIKeyboardWillHideNotification, object: nil)
     }
@@ -82,7 +82,7 @@ class ProfileViewController: BasePageViewController {
         NSNotificationCenter.defaultCenter().removeObserver(self)
     }
     
-    func keyboardWillShow() {
+    @objc private func keyboardWillShow() {
         spacerHeightConstraint.constant = reducedSpacerHeight
         UIView.animateWithDuration(
             0.7,
@@ -96,7 +96,7 @@ class ProfileViewController: BasePageViewController {
         self.view.addGestureRecognizer(self.tapToDismissRecognizer)
     }
     
-    func keyboardWillHide() {
+    @objc private func keyboardWillHide() {
         spacerHeightConstraint.constant = defaultSpacerHeight
         UIView.animateWithDuration(
             0.7,
@@ -116,6 +116,14 @@ class ProfileViewController: BasePageViewController {
         }
     }
     
+    func showKeyboardForName() {
+        self.nameField.becomeFirstResponder()
+    }
+    
+    func showKeyboardForEmail() {
+        self.emailField.becomeFirstResponder()
+    }
+    
     // MARK: - EKPageScrolling
     
     override func onScrollWithPageOnRight(offset: CGFloat) {
@@ -124,6 +132,20 @@ class ProfileViewController: BasePageViewController {
     
     override func onScrollWithPageOnLeft(offset: CGFloat) {
         spacerHeightConstraint.constant = defaultSpacerHeight + (50 * offset)
+    }
+    
+    // MARK: - BYSubmissionInfoCollecting
+    
+    override func collectInfoForSubmission(submission: BYSubmission) {
+        if !self.nameField.text.isEmpty {
+            submission.name = self.nameField.text
+        }
+        if !self.emailField.text.isEmpty {
+            submission.email = self.emailField.text
+        }
+        if !self.phoneField.text.isEmpty {
+            submission.phone = self.phoneField.text
+        }
     }
     
 }

@@ -12,17 +12,9 @@ class AgeGroupViewController: BasePageViewController, UITableViewDelegate, UITab
 
     @IBOutlet weak var headerLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var submitButton: BYActionButton!
     
     var selectedRow = -1
-
-    let demographics = [
-        BYAgeGroup.None: AgeDemographic(ageGroup: "Not Specified", ageRange: "NONE"),
-        BYAgeGroup.HighSchool: AgeDemographic(ageGroup: "High School", ageRange: "Ages 15- 18"),
-        BYAgeGroup.College: AgeDemographic(ageGroup: "College & Young Adult", ageRange: "Ages 19 - 25"),
-        BYAgeGroup.Adult: AgeDemographic(ageGroup: "Adult", ageRange: "Ages 26 - 45"),
-        BYAgeGroup.Middle: AgeDemographic(ageGroup: "Middle Age", ageRange: "Ages 46 - 60"),
-        BYAgeGroup.Senior: AgeDemographic(ageGroup: "Senior", ageRange: "Ages 60+")
-    ]
     
     override func viewDidLoad() {
      
@@ -60,14 +52,14 @@ class AgeGroupViewController: BasePageViewController, UITableViewDelegate, UITab
         
         // Configure cell
         let ageGroup = BYAgeGroup(rawValue: indexPath.row)!
-        cell.demographicLabel.text = demographics[ageGroup]?.ageGroup
-        cell.ageRangeLabel.text = demographics[ageGroup]?.ageRange
+        cell.demographicLabel.text = ageDemographics[ageGroup]?.ageGroup
+        cell.ageRangeLabel.text = ageDemographics[ageGroup]?.ageRange
         
         return cell
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.demographics.count-1
+        return ageDemographics.count-1
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
@@ -85,26 +77,68 @@ class AgeGroupViewController: BasePageViewController, UITableViewDelegate, UITab
     
     override func onScrollWithPageOnRight(offset: CGFloat) {
         self.headerLabel.transform = CGAffineTransformMakeTranslation(-offset * self.view.width, -self.view.height * offset * 0.3)
-        for i in 0..<self.demographics.count-1 {
+        for i in 0 ..< ageDemographics.count-1 {
             let cell = self.tableView.visibleCells()[i] as! UITableViewCell
             cell.transform = CGAffineTransformMakeTranslation(CGFloat(i) * offset * 150, 0)
         }
     }
     
+    // MARK: - BYSubmissionInfoCollecting
+    
+    override func collectInfoForSubmission(submission: BYSubmission) {
+        if self.selectedRow >= 0 {
+            submission.ageGroup = BYAgeGroup(rawValue: self.selectedRow)
+        }
+    }
+    
+    
     // MARK: - Submit
     
     @IBAction func submitForm(sender: AnyObject) {
         
-        
-        // TODO: send off to database or email
-        
-        
-        
-        APIWrapperSubmit().submitToAPI(BYSubmission(), completion: { (success, message) -> Void in
+        if let containerVC = self.parentViewController as? ContainerViewController {
             
-            
-            
-        })
+            if containerVC.submissionIsComplete() {
+                
+                let numberOfCells = self.tableView.visibleCells().count
+                
+                let totalDuration = 0.7
+                let animDelayOffset = 0.1
+                let cellAnimDuration = totalDuration - (Double(numberOfCells) * animDelayOffset)
+                
+                for i in 0 ..< numberOfCells {
+                    if let cell = self.tableView.cellForRowAtIndexPath(NSIndexPath(forRow: i, inSection: 0)) {
+                        UIView.animateWithDuration(
+                            cellAnimDuration,
+                            delay: animDelayOffset * Double(i),
+                            options: UIViewAnimationOptions.CurveEaseInOut,
+                            animations: { () -> Void in
+                                cell.transform = CGAffineTransformMakeScale(1.1, 1.1)
+                                cell.alpha = 0
+                        }, completion: nil)
+                    }
+                }
+                
+                UIView.animateWithDuration(
+                    totalDuration,
+                    delay: 0,
+                    options: UIViewAnimationOptions.CurveEaseInOut,
+                    animations: { () -> Void in
+                        self.headerLabel.transform = CGAffineTransformMakeTranslation(0, -200)
+                        self.submitButton.transform = CGAffineTransformMakeScale(1.1, 1.1)
+                        self.submitButton.alpha = 0
+                }, completion: { (finished) -> Void in
+                    
+                    let loadingView = MMMaterialDesignSpinner()
+                    
+                    
+                })
+                
+//                APIWrapperSubmit().submitToAPI(BYSubmission(), completion: { (success, message) -> Void in
+//                    
+//                })
+            }
+        }
     }
     
 }

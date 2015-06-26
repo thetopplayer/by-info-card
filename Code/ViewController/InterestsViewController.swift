@@ -117,5 +117,11 @@ class InterestsViewController: BasePageViewController, UITableViewDataSource, UI
         }
     }
     
+    // MARK: - BYSubmissionInfoCollecting
     
+    override func collectInfoForSubmission(submission: BYSubmission) {
+        if let indexPathsForSelectedRows = self.tableView.indexPathsForSelectedRows() {
+            submission.interests = indexPathsForSelectedRows.map({ return self.interests[$0.row] } )
+        }
+    }
 }

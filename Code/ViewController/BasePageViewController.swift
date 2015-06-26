@@ -8,7 +8,7 @@
 
 import UIKit
 
-class BasePageViewController: UIViewController, EKPageScrolling {
+class BasePageViewController: UIViewController, EKPageScrolling, BYSubmissionInfoCollecting {
     
     override func viewDidLoad() {
      
@@ -24,4 +24,8 @@ class BasePageViewController: UIViewController, EKPageScrolling {
     
     func onScrollWithPageOnLeft(offset: CGFloat) {}
     func onScrollWithPageOnRight(offset: CGFloat) {}
+    
+    // MARK: - BYSubmissionInfoCollecting (implement in subclass) 
+    
+    func collectInfoForSubmission(submission: BYSubmission) {}
 }

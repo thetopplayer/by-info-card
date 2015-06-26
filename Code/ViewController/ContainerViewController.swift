@@ -13,9 +13,9 @@ class ContainerViewController: UIViewController, UIScrollViewDelegate {
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var swipeTipLabel: UILabel!
     @IBOutlet weak var pageControl: UIPageControl!
-    var submission: BYSubmission?
+    var submission = BYSubmission()
     weak var delegate: BYSubmissionFinishing?
-    var pages = [UIViewController]()
+    private var pages = [BasePageViewController]()
     
     let defaultSwipeLabelAlpha: CGFloat = 0.7
     
@@ -131,12 +131,12 @@ class ContainerViewController: UIViewController, UIScrollViewDelegate {
         
         // Notify left page about scroll
         if leftPageIndex >= 0 {
-            (self.pages[leftPageIndex] as! EKPageScrolling).onScrollWithPageOnLeft(leftOffset)
+            self.pages[leftPageIndex].onScrollWithPageOnLeft(leftOffset)
         }
         
         // Notify right page about scroll
         if rightPageIndex < self.pages.count {
-            (self.pages[rightPageIndex] as! EKPageScrolling).onScrollWithPageOnRight(rightOffset)
+            self.pages[rightPageIndex].onScrollWithPageOnRight(rightOffset)
         }
         
         // Update page control
@@ -148,10 +148,43 @@ class ContainerViewController: UIViewController, UIScrollViewDelegate {
     // MARK: - Submission
     
     func submissionIsComplete() -> Bool {
-        if let submission = self.submission {
-            return submission.name != nil && (submission.email != nil || submission.phone != nil)
-        } else {
+        
+        // Collect info from pages
+        self.pages.map({ page in
+            page.collectInfoForSubmission(self.submission)
+        })
+        
+        let nameIncomplete = submission.name == nil
+        let contactInfoIncomplete = submission.email == nil && submission.phone == nil
+        
+        if nameIncomplete || contactInfoIncomplete {
+            
+            // Show alert that form is incomplete
+            let messsage = "Please enter your " + (nameIncomplete ? "name" : "phone or email") + " to complete the form."
+            let alertController = UIAlertController(title: "Form Incomplete", message: messsage, preferredStyle: .Alert)
+            alertController.addAction(UIAlertAction(title: "Okay", style: .Cancel, handler: { alertAction in
+                
+                // Scroll to profile
+                UIView.animateWithDuration(0.7, delay: 0, options: UIViewAnimationOptions.CurveEaseInOut, animations: { () -> Void in
+                    self.scrollView.contentOffset.x = self.view.width
+                    }, completion: { (finished) -> Void in
+                        
+                        // Show keyboard
+                        if let profileVC = self.pages[1] as? ProfileViewController {
+                            if nameIncomplete {
+                                profileVC.showKeyboardForName()
+                            } else {
+                                profileVC.showKeyboardForEmail()
+                            }
+                        }
+                })
+                
+            }))
+            
+            presentViewController(alertController, animated: true, completion: nil)
             return false
+        } else {
+            return true
         }
     }
     
@@ -175,11 +208,11 @@ class ContainerViewController: UIViewController, UIScrollViewDelegate {
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardDidHide", name: UIKeyboardDidHideNotification, object: nil)
     }
     
-    private func keyboardWillShow() {
+    @objc private func keyboardWillShow() {
         self.scrollView.scrollEnabled = false
     }
     
-    private func keyboardDidHide() {
+    @objc private func keyboardDidHide() {
         self.scrollView.scrollEnabled = true
     }
 }

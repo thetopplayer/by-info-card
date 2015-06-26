@@ -22,12 +22,12 @@ class RootViewController: UIViewController, BYWelcomeTransitioning, BYSubmission
 
         super.viewDidLoad()
 
-        configureWelcomeScene()
+        configureAndAnimateWelcomeScene()
     }
     
     // MARK: Configure
     
-    private func configureWelcomeScene() {
+    private func configureAndAnimateWelcomeScene() {
         let welcomeVC = self.storyboard?.instantiateViewControllerWithIdentifier("WelcomeVC") as! WelcomeViewController
         welcomeVC.welcomeDelegate = self
         self.addChildViewController(welcomeVC)
@@ -40,13 +40,16 @@ class RootViewController: UIViewController, BYWelcomeTransitioning, BYSubmission
     
     func goToForm(userType: BYUserType) {
         
+        // Create container view controller
         let containerVC = self.storyboard?.instantiateViewControllerWithIdentifier("ContainerVC") as! ContainerViewController
-        self.addChildViewController(containerVC)
-        containerVC.view.alpha = 0
+        containerVC.submission.userType = userType
         containerVC.delegate = self
+        containerVC.view.alpha = 0
+        self.addChildViewController(containerVC)
         self.view.addSubview(containerVC.view)
         containerVC.didMoveToParentViewController(self)
         
+        // Animate transition
         UIView.animateWithDuration(
             0.5,
             delay: 0,
@@ -63,7 +66,7 @@ class RootViewController: UIViewController, BYWelcomeTransitioning, BYSubmission
     // MARK: - BYSubmissionFinishing
     
     func returnToWelcomeScreen() {
-        configureWelcomeScene()
+        configureAndAnimateWelcomeScene()
     }
     
     func goToThankYouScreen() {

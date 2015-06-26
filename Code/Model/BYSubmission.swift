@@ -29,11 +29,21 @@ struct AgeDemographic {
     var ageRange: String!
 }
 
+let ageDemographics = [
+    BYAgeGroup.None: AgeDemographic(ageGroup: "Not Specified", ageRange: "NONE"),
+    BYAgeGroup.HighSchool: AgeDemographic(ageGroup: "High School", ageRange: "Ages 15- 18"),
+    BYAgeGroup.College: AgeDemographic(ageGroup: "College & Young Adult", ageRange: "Ages 19 - 25"),
+    BYAgeGroup.Adult: AgeDemographic(ageGroup: "Adult", ageRange: "Ages 26 - 45"),
+    BYAgeGroup.Middle: AgeDemographic(ageGroup: "Middle Age", ageRange: "Ages 46 - 60"),
+    BYAgeGroup.Senior: AgeDemographic(ageGroup: "Senior", ageRange: "Ages 60+")
+]
+
+
 class BYSubmission: NSObject {
     
     var userType: BYUserType?
     
-    var interests = [String]()
+    var interests: [String]?
     
     var name: String?
     

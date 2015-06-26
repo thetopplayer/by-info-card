@@ -202,7 +202,7 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" alpha="0.5" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NvV-CP-hiq">
+                            <button opaque="NO" alpha="0.5" contentMode="scaleAspectFit" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NvV-CP-hiq">
                                 <rect key="frame" x="36" y="548.5" width="50" height="31.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="NvV-CP-hiq" secondAttribute="height" multiplier="1:1" id="O8q-LO-ulI"/>
@@ -532,6 +532,7 @@
                     </view>
                     <connections>
                         <outlet property="headerLabel" destination="pVE-Hx-xoa" id="XaF-4x-ekg"/>
+                        <outlet property="submitButton" destination="1wt-Df-0pR" id="bDj-49-7Kx"/>
                         <outlet property="tableView" destination="lew-GG-Osb" id="NfL-YQ-xvc"/>
                     </connections>
                 </viewController>
