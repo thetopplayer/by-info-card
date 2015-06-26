@@ -42,11 +42,6 @@ class BYAgeTableViewCell: UITableViewCell {
         })
     }
     
-    override func setHighlighted(highlighted: Bool, animated: Bool) {
-        super.setHighlighted(highlighted, animated: animated)
-        self.cardView.backgroundColor = highlighted ? self.selectedCardColor : self.defaultCardColor
-    }
-    
     // MARK: - Configure
     
     func configureLabels() {

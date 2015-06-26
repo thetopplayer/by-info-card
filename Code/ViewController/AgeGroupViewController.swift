@@ -98,13 +98,14 @@ class AgeGroupViewController: BasePageViewController, UITableViewDelegate, UITab
         
         // TODO: send off to database or email
         
-
+        
+        
         
         APIWrapperSubmit().submitToAPI(BYSubmission(), completion: { (success, message) -> Void in
             
+            
+            
         })
-        
-        (self.parentViewController as! ContainerViewController).submitForm()
     }
     
 }

@@ -147,7 +147,15 @@ class ContainerViewController: UIViewController, UIScrollViewDelegate {
     
     // MARK: - Submission
     
-    func submitForm() {
+    func submissionIsComplete() -> Bool {
+        if let submission = self.submission {
+            return submission.name != nil && (submission.email != nil || submission.phone != nil)
+        } else {
+            return false
+        }
+    }
+    
+    private func exitToThankYouScreen(sender: UIViewController) {
         UIView.animateWithDuration(0.5, animations: { () -> Void in
             let scale: CGFloat = 1.2;
             self.view.transform = CGAffineTransformMakeScale(scale, scale)
@@ -162,16 +170,16 @@ class ContainerViewController: UIViewController, UIScrollViewDelegate {
     
     // MARK: - Keyboard Listeners
     
-    func configureKeyboardListeners() {
+    private func configureKeyboardListeners() {
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillShow", name: UIKeyboardWillShowNotification, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardDidHide", name: UIKeyboardDidHideNotification, object: nil)
     }
     
-    func keyboardWillShow() {
+    private func keyboardWillShow() {
         self.scrollView.scrollEnabled = false
     }
     
-    func keyboardDidHide() {
+    private func keyboardDidHide() {
         self.scrollView.scrollEnabled = true
     }
 }
