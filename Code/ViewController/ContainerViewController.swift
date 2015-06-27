@@ -188,17 +188,22 @@ class ContainerViewController: UIViewController, UIScrollViewDelegate {
         }
     }
     
-    private func exitToThankYouScreen(sender: UIViewController) {
-        UIView.animateWithDuration(0.5, animations: { () -> Void in
-            let scale: CGFloat = 1.2;
-            self.view.transform = CGAffineTransformMakeScale(scale, scale)
-            self.view.alpha = 0
-            }, completion: { (finished) -> Void in
-                self.willMoveToParentViewController(nil)
-                self.view.removeFromSuperview()
-                self.removeFromParentViewController()
-                self.delegate?.goToThankYouScreen()
-        })
+    func exitToThankYouScreen(sender: UIViewController) {
+        
+        UIView.animateWithDuration(
+            0.5,
+            delay: 0.2,
+            options: .CurveEaseInOut,
+            animations: { () -> Void in
+                let scale: CGFloat = 1.2;
+                self.view.transform = CGAffineTransformMakeScale(scale, scale)
+                self.view.alpha = 0
+        }) { (finished) -> Void in
+            self.willMoveToParentViewController(nil)
+            self.view.removeFromSuperview()
+            self.removeFromParentViewController()
+            self.delegate?.goToThankYouScreen()
+        }
     }
     
     // MARK: - Keyboard Listeners

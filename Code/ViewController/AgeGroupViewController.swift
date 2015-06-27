@@ -129,14 +129,50 @@ class AgeGroupViewController: BasePageViewController, UITableViewDelegate, UITab
                         self.submitButton.alpha = 0
                 }, completion: { (finished) -> Void in
                     
-                    let loadingView = MMMaterialDesignSpinner()
-                    
+                    // Create loading view
+                    let loadingViewDiameter: CGFloat = 60
+                    let loadingViewOriginX = (self.view.width / 2) - (loadingViewDiameter / 2)
+                    let loadingViewOriginY = (self.view.height / 2) - (loadingViewDiameter / 2)
+                    let loadingView = MMMaterialDesignSpinner(frame: CGRect(
+                        x: loadingViewOriginX,
+                        y: loadingViewOriginY,
+                        width: loadingViewDiameter,
+                        height: loadingViewDiameter))
+                    loadingView.lineWidth = 3
+                    loadingView.tintColor = UIColor.whiteColor()
+                    loadingView.startAnimating()
+                    self.view.addSubview(loadingView)
+
+                    // *** SUBMIT TO DA API *** //
+                    APIWrapperSubmit().submitToAPI(containerVC.submission, completion: { (success) -> Void in
+
+                        if success {
+                            
+                            containerVC.exitToThankYouScreen(self)
+                            
+                        } else {
+                            
+                            // Present alert
+                            let alertController = UIAlertController(title: "Error",
+                                message: "Uh-oh. Something went wrong. Please check your Internet connection and try again.",
+                                preferredStyle: .Alert)
+                            alertController.addAction(UIAlertAction(title: "Dismiss", style: .Cancel, handler: nil))
+                            self.presentViewController(alertController, animated: true, completion: nil)
+                            
+                            // Transform all views back to normal
+                            self.headerLabel.transform = CGAffineTransformIdentity
+                            self.submitButton.transform = CGAffineTransformIdentity
+                            self.submitButton.alpha = 1
+                            for cell in self.tableView.visibleCells() {
+                                if let cell = cell as? UITableViewCell {
+                                    cell.transform = CGAffineTransformIdentity
+                                    cell.alpha = 1
+                                }
+                            }
+                        }
+                    })
                     
                 })
-                
-//                APIWrapperSubmit().submitToAPI(BYSubmission(), completion: { (success, message) -> Void in
-//                    
-//                })
             }
         }
     }

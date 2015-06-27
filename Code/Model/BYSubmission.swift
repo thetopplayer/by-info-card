@@ -15,6 +15,12 @@ enum BYUserType {
     case Regular        // Regular attendee
 }
 
+let attendeeTypeStrings: [BYUserType: String] = [
+    .New: "New",
+    .Sometimes: "Sometimes",
+    .Regular: "Regular"
+]
+
 enum BYAgeGroup: Int {
     case None = -1
     case HighSchool
