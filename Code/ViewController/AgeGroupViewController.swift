@@ -102,7 +102,7 @@ class AgeGroupViewController: BasePageViewController, UITableViewDelegate, UITab
                 
                 let numberOfCells = self.tableView.visibleCells().count
                 
-                let totalDuration = 0.7
+                let totalDuration = 0.6
                 let animDelayOffset = 0.1
                 let cellAnimDuration = totalDuration - (Double(numberOfCells) * animDelayOffset)
                 
@@ -160,6 +160,7 @@ class AgeGroupViewController: BasePageViewController, UITableViewDelegate, UITab
                             self.presentViewController(alertController, animated: true, completion: nil)
                             
                             // Transform all views back to normal
+                            loadingView.hidden = true
                             self.headerLabel.transform = CGAffineTransformIdentity
                             self.submitButton.transform = CGAffineTransformIdentity
                             self.submitButton.alpha = 1
