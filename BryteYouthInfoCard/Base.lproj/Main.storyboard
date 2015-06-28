@@ -180,7 +180,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5uj-oD-hAu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="259" y="244"/>
+            <point key="canvasLocation" x="441" y="244"/>
         </scene>
         <!--Container View Controller-->
         <scene sceneID="Bx6-oK-LHB">
@@ -278,7 +278,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZHl-qD-Xgf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="935" y="244"/>
+            <point key="canvasLocation" x="1301" y="244"/>
         </scene>
         <!--Interests View Controller-->
         <scene sceneID="5lF-OT-Egl">
@@ -348,7 +348,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LcO-qE-Xo9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-474" y="1020"/>
+            <point key="canvasLocation" x="-436" y="1162"/>
         </scene>
         <!--Done View Controller-->
         <scene sceneID="pj1-vu-rlW">
@@ -472,7 +472,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tr1-b6-yZs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-474" y="1732"/>
+            <point key="canvasLocation" x="-424" y="2192"/>
         </scene>
         <!--Age Group View Controller-->
         <scene sceneID="wGQ-K9-j2c">
@@ -539,32 +539,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Il6-L5-bGd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="259" y="1020"/>
-        </scene>
-        <!--Recent Submission View Controller-->
-        <scene sceneID="eby-HC-O2L">
-            <objects>
-                <tableViewController storyboardIdentifier="RecentSubmissionVC" id="u82-zH-XwW" customClass="RecentSubmissionViewController" customModule="BryteYouthInfoCard" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="utl-qN-3uk">
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="kmQ-7Q-Ry6">
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="kmQ-7Q-Ry6" id="kj4-U8-spI">
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="u82-zH-XwW" id="yGQ-2B-EiQ"/>
-                            <outlet property="delegate" destination="u82-zH-XwW" id="kVf-Rf-EHc"/>
-                        </connections>
-                    </tableView>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="rr8-9X-q5u" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="258.75" y="1731.75"/>
+            <point key="canvasLocation" x="535" y="1272"/>
         </scene>
         <!--Profile View Controller-->
         <scene sceneID="CB8-O5-mYI">
@@ -712,7 +687,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gzr-S8-NMt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="972" y="1020"/>
+            <point key="canvasLocation" x="1432" y="1312"/>
         </scene>
     </scenes>
     <resources>

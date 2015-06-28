@@ -28,6 +28,10 @@
 		BA8034471B3D0E28007F7F08 /* BYSubmissionInfoCollecting.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8034461B3D0E28007F7F08 /* BYSubmissionInfoCollecting.swift */; };
 		BA8A75241B32436F0007FC4B /* BYLogo-Dark.png in Resources */ = {isa = PBXBuildFile; fileRef = BA8A75231B32436F0007FC4B /* BYLogo-Dark.png */; };
 		BA8A75261B3244D10007FC4B /* Images-2.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA8A75251B3244D10007FC4B /* Images-2.xcassets */; };
+		BA90AF751B3FF71900B123FD /* Facebook.png in Resources */ = {isa = PBXBuildFile; fileRef = BA90AF711B3FF71900B123FD /* Facebook.png */; };
+		BA90AF761B3FF71900B123FD /* Instagram.png in Resources */ = {isa = PBXBuildFile; fileRef = BA90AF721B3FF71900B123FD /* Instagram.png */; };
+		BA90AF771B3FF71900B123FD /* Options.png in Resources */ = {isa = PBXBuildFile; fileRef = BA90AF731B3FF71900B123FD /* Options.png */; };
+		BA90AF781B3FF71900B123FD /* Twitter.png in Resources */ = {isa = PBXBuildFile; fileRef = BA90AF741B3FF71900B123FD /* Twitter.png */; };
 		BAA6837F1B2A014A002C0868 /* BYAgeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA6837D1B2A014A002C0868 /* BYAgeTableViewCell.swift */; };
 		BAA683801B2A014A002C0868 /* BYAgeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAA6837E1B2A014A002C0868 /* BYAgeTableViewCell.xib */; };
 		BAA683831B2A2389002C0868 /* BYCheckboxTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA683811B2A2389002C0868 /* BYCheckboxTableViewCell.swift */; };
@@ -95,6 +99,10 @@
 		BA8034461B3D0E28007F7F08 /* BYSubmissionInfoCollecting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BYSubmissionInfoCollecting.swift; sourceTree = "<group>"; };
 		BA8A75231B32436F0007FC4B /* BYLogo-Dark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "BYLogo-Dark.png"; sourceTree = "<group>"; };
 		BA8A75251B3244D10007FC4B /* Images-2.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Images-2.xcassets"; sourceTree = "<group>"; };
+		BA90AF711B3FF71900B123FD /* Facebook.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Facebook.png; sourceTree = "<group>"; };
+		BA90AF721B3FF71900B123FD /* Instagram.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Instagram.png; sourceTree = "<group>"; };
+		BA90AF731B3FF71900B123FD /* Options.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Options.png; sourceTree = "<group>"; };
+		BA90AF741B3FF71900B123FD /* Twitter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Twitter.png; sourceTree = "<group>"; };
 		BAA6837D1B2A014A002C0868 /* BYAgeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BYAgeTableViewCell.swift; sourceTree = "<group>"; };
 		BAA6837E1B2A014A002C0868 /* BYAgeTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BYAgeTableViewCell.xib; sourceTree = "<group>"; };
 		BAA683811B2A2389002C0868 /* BYCheckboxTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BYCheckboxTableViewCell.swift; sourceTree = "<group>"; };
@@ -225,6 +233,10 @@
 		BA4212E41B1EEB2900571F81 /* Graphics */ = {
 			isa = PBXGroup;
 			children = (
+				BA90AF711B3FF71900B123FD /* Facebook.png */,
+				BA90AF721B3FF71900B123FD /* Instagram.png */,
+				BA90AF731B3FF71900B123FD /* Options.png */,
+				BA90AF741B3FF71900B123FD /* Twitter.png */,
 				BA5109F31B3F6F4300DEC700 /* RecentSubmissionToggle@2x.png */,
 				BA5109F41B3F6F4300DEC700 /* RecentSubmissionToggle@3x.png */,
 				BA8A75231B32436F0007FC4B /* BYLogo-Dark.png */,
@@ -399,6 +411,7 @@
 				BAA683841B2A2389002C0868 /* BYCheckboxTableViewCell.xib in Resources */,
 				BA8A75241B32436F0007FC4B /* BYLogo-Dark.png in Resources */,
 				BA4212E61B1EEB2900571F81 /* Background.png in Resources */,
+				BA90AF751B3FF71900B123FD /* Facebook.png in Resources */,
 				BAA683961B2A5C63002C0868 /* Instagram@3x.png in Resources */,
 				BAA683941B2A5C63002C0868 /* Facebook@3x.png in Resources */,
 				BAA683931B2A5C63002C0868 /* Facebook@2x.png in Resources */,
@@ -413,10 +426,13 @@
 				BA3E9A9D1B09701D00C87C41 /* LaunchScreen.xib in Resources */,
 				BAA683981B2A5C63002C0868 /* Twitter@3x.png in Resources */,
 				BAA683871B2A2689002C0868 /* Checkbox@2x.png in Resources */,
+				BA90AF771B3FF71900B123FD /* Options.png in Resources */,
+				BA90AF781B3FF71900B123FD /* Twitter.png in Resources */,
 				BAA683881B2A2689002C0868 /* Checkbox@3x.png in Resources */,
 				BAE719A41B2D08860060F31B /* BYLogo.png in Resources */,
 				BAA683971B2A5C63002C0868 /* Twitter@2x.png in Resources */,
 				BA8A75261B3244D10007FC4B /* Images-2.xcassets in Resources */,
+				BA90AF761B3FF71900B123FD /* Instagram.png in Resources */,
 				BAA683951B2A5C63002C0868 /* Instagram@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -610,7 +626,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = BryteYouthInfoCard/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -626,7 +642,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = BryteYouthInfoCard/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
