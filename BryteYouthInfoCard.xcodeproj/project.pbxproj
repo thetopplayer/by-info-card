@@ -19,6 +19,10 @@
 		BA4E3C041B275FF2006EDD17 /* SubmitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4E3C031B275FF2006EDD17 /* SubmitViewController.swift */; };
 		BA4E3C061B275FF9006EDD17 /* DoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4E3C051B275FF9006EDD17 /* DoneViewController.swift */; };
 		BA4E3C0B1B27779C006EDD17 /* BasePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4E3C0A1B27779C006EDD17 /* BasePageViewController.swift */; };
+		BA5109F01B3F639F00DEC700 /* RecentSubmissionsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5109EF1B3F639F00DEC700 /* RecentSubmissionsManager.swift */; };
+		BA5109F21B3F6BAE00DEC700 /* RecentSubmissionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5109F11B3F6BAE00DEC700 /* RecentSubmissionViewController.swift */; };
+		BA5109F51B3F6F4300DEC700 /* RecentSubmissionToggle@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA5109F31B3F6F4300DEC700 /* RecentSubmissionToggle@2x.png */; };
+		BA5109F61B3F6F4300DEC700 /* RecentSubmissionToggle@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA5109F41B3F6F4300DEC700 /* RecentSubmissionToggle@3x.png */; };
 		BA58AAB91B27B74400426109 /* BYTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA58AAB81B27B74400426109 /* BYTextField.swift */; };
 		BA8034431B3D0C88007F7F08 /* MMMaterialDesignSpinner.m in Sources */ = {isa = PBXBuildFile; fileRef = BA8034411B3D0C88007F7F08 /* MMMaterialDesignSpinner.m */; };
 		BA8034471B3D0E28007F7F08 /* BYSubmissionInfoCollecting.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8034461B3D0E28007F7F08 /* BYSubmissionInfoCollecting.swift */; };
@@ -80,6 +84,10 @@
 		BA4E3C031B275FF2006EDD17 /* SubmitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubmitViewController.swift; sourceTree = "<group>"; };
 		BA4E3C051B275FF9006EDD17 /* DoneViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoneViewController.swift; sourceTree = "<group>"; };
 		BA4E3C0A1B27779C006EDD17 /* BasePageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasePageViewController.swift; sourceTree = "<group>"; };
+		BA5109EF1B3F639F00DEC700 /* RecentSubmissionsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecentSubmissionsManager.swift; sourceTree = "<group>"; };
+		BA5109F11B3F6BAE00DEC700 /* RecentSubmissionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecentSubmissionViewController.swift; sourceTree = "<group>"; };
+		BA5109F31B3F6F4300DEC700 /* RecentSubmissionToggle@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "RecentSubmissionToggle@2x.png"; sourceTree = "<group>"; };
+		BA5109F41B3F6F4300DEC700 /* RecentSubmissionToggle@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "RecentSubmissionToggle@3x.png"; sourceTree = "<group>"; };
 		BA58AAB81B27B74400426109 /* BYTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BYTextField.swift; sourceTree = "<group>"; };
 		BA8034401B3D0C88007F7F08 /* MMMaterialDesignSpinner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMMaterialDesignSpinner.h; sourceTree = "<group>"; };
 		BA8034411B3D0C88007F7F08 /* MMMaterialDesignSpinner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMMaterialDesignSpinner.m; sourceTree = "<group>"; };
@@ -138,6 +146,7 @@
 			isa = PBXGroup;
 			children = (
 				BA12C6B71B392ABC00AAE857 /* APIWrapperSubmit.swift */,
+				BA5109EF1B3F639F00DEC700 /* RecentSubmissionsManager.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -216,6 +225,8 @@
 		BA4212E41B1EEB2900571F81 /* Graphics */ = {
 			isa = PBXGroup;
 			children = (
+				BA5109F31B3F6F4300DEC700 /* RecentSubmissionToggle@2x.png */,
+				BA5109F41B3F6F4300DEC700 /* RecentSubmissionToggle@3x.png */,
 				BA8A75231B32436F0007FC4B /* BYLogo-Dark.png */,
 				BAE719A31B2D08860060F31B /* BYLogo.png */,
 				BAE7199B1B2CDAF00060F31B /* Options@2x.png */,
@@ -290,6 +301,7 @@
 				BA4E3C031B275FF2006EDD17 /* SubmitViewController.swift */,
 				BA4E3C051B275FF9006EDD17 /* DoneViewController.swift */,
 				BAE6C34D1B2B585700B2CD50 /* ContainerViewController.swift */,
+				BA5109F11B3F6BAE00DEC700 /* RecentSubmissionViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -352,6 +364,7 @@
 				TargetAttributes = {
 					BA3E9A8C1B09701D00C87C41 = {
 						CreatedOnToolsVersion = 6.3.1;
+						DevelopmentTeam = 5KT4ZVPMF8;
 					};
 					BA3E9AA11B09701D00C87C41 = {
 						CreatedOnToolsVersion = 6.3.1;
@@ -394,6 +407,8 @@
 				BA3E9A981B09701D00C87C41 /* Main.storyboard in Resources */,
 				BAE7199D1B2CDAF00060F31B /* Options@2x.png in Resources */,
 				BAA683801B2A014A002C0868 /* BYAgeTableViewCell.xib in Resources */,
+				BA5109F51B3F6F4300DEC700 /* RecentSubmissionToggle@2x.png in Resources */,
+				BA5109F61B3F6F4300DEC700 /* RecentSubmissionToggle@3x.png in Resources */,
 				BAA6838B1B2A5B56002C0868 /* CheckboxSelected@2x.png in Resources */,
 				BA3E9A9D1B09701D00C87C41 /* LaunchScreen.xib in Resources */,
 				BAA683981B2A5C63002C0868 /* Twitter@3x.png in Resources */,
@@ -439,6 +454,7 @@
 			files = (
 				BA4E3C021B275FE4006EDD17 /* AgeGroupViewController.swift in Sources */,
 				BA4E3BFE1B275FC2006EDD17 /* InterestsViewController.swift in Sources */,
+				BA5109F21B3F6BAE00DEC700 /* RecentSubmissionViewController.swift in Sources */,
 				BA4E3C0B1B27779C006EDD17 /* BasePageViewController.swift in Sources */,
 				BAE733C61B240A0100486B84 /* RootViewController.swift in Sources */,
 				BAE733C31B2409F000486B84 /* BYActionButton.swift in Sources */,
@@ -457,6 +473,7 @@
 				BAA6837F1B2A014A002C0868 /* BYAgeTableViewCell.swift in Sources */,
 				BAE719A01B2CEFD10060F31B /* BYSubmissionFinishing.swift in Sources */,
 				BA8034431B3D0C88007F7F08 /* MMMaterialDesignSpinner.m in Sources */,
+				BA5109F01B3F639F00DEC700 /* RecentSubmissionsManager.swift in Sources */,
 				BAE733CB1B24166C00486B84 /* BYSubmission.swift in Sources */,
 				BAE6C34E1B2B585700B2CD50 /* ContainerViewController.swift in Sources */,
 				BAA683831B2A2389002C0868 /* BYCheckboxTableViewCell.swift in Sources */,
@@ -590,9 +607,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = BryteYouthInfoCard/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "BryteYouthInfoCard/BY-Bridging-Header.h";
 			};
 			name = Debug;
@@ -602,9 +623,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = BryteYouthInfoCard/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "BryteYouthInfoCard/BY-Bridging-Header.h";
 			};
 			name = Release;

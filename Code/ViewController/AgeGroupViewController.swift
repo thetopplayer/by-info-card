@@ -102,8 +102,8 @@ class AgeGroupViewController: BasePageViewController, UITableViewDelegate, UITab
                 
                 let numberOfCells = self.tableView.visibleCells().count
                 
-                let totalDuration = 0.6
-                let animDelayOffset = 0.1
+                let totalDuration = 0.7
+                let animDelayOffset = 0.08
                 let cellAnimDuration = totalDuration - (Double(numberOfCells) * animDelayOffset)
                 
                 for i in 0 ..< numberOfCells {

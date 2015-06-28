@@ -61,3 +61,26 @@ class BYSubmission: NSObject {
     
     var comments: String?
 }
+
+class BYRecentSubmission: NSObject, NSCoding {
+    
+    var userName: String
+    var date: NSDate
+    let kUserNameKey = "userName"
+    let kDateKey = "date"
+    
+    init(userName: String, date: NSDate) {
+        self.userName = userName
+        self.date = date
+    }
+    
+    required init(coder aDecoder: NSCoder) {
+        userName = aDecoder.decodeObjectForKey(kUserNameKey) as! String
+        date = aDecoder.decodeObjectForKey(kDateKey) as! NSDate
+    }
+    
+    func encodeWithCoder(aCoder: NSCoder) {
+        aCoder.encodeObject(userName, forKey: kUserNameKey)
+        aCoder.encodeObject(date, forKey: kDateKey)
+    }
+}

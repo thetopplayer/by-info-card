@@ -18,6 +18,7 @@ class WelcomeViewController: UIViewController {
     @IBOutlet weak var logoImageView: UIImageView!
     @IBOutlet var userTypeButtons: [BYActionButton]!
     weak var welcomeDelegate: BYWelcomeTransitioning?
+    @IBOutlet weak var recentSubmissionsButton: UIButton!
     
     override func viewDidLoad() {
 
@@ -104,5 +105,16 @@ class WelcomeViewController: UIViewController {
             self.removeFromParentViewController()
             self.welcomeDelegate?.goToForm(userType)
         };
+    }
+
+    
+    @IBAction func viewRecentSubmissions(sender: AnyObject) {
+        
+        let recentSubmissionsVC = self.storyboard!.instantiateViewControllerWithIdentifier("RecentSubmissionVC") as! UIViewController
+        let recentNavigationController = UINavigationController(rootViewController: recentSubmissionsVC)
+        let popoverController = UIPopoverController(contentViewController: recentNavigationController)
+        popoverController.popoverContentSize = CGSize(width: 320, height: 400)
+        popoverController.presentPopoverFromRect(sender.frame, inView: self.view, permittedArrowDirections: UIPopoverArrowDirection.Any, animated: true)
+        
     }
 }

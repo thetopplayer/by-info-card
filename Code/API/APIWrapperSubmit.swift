@@ -11,16 +11,17 @@ import Foundation
 class APIWrapperSubmit: NSObject {
     
     private var responseData = NSMutableData()
-    private let url = NSURL(string: "https://docs.google.com/forms/d/1uB227lLrQyZNK36BB8cW8ZJuYjBST_Qy2SG9RfY3GV0/formResponse")!
     private var connection: NSURLConnection?
     private var completionCallback: ((Bool) -> Void)?
     
-    let kUserTypeEntryKey = "entry.141171165"
-    let kInterestsKey = "entry.1399715047"
-    let kNameKey = "entry.1750756117"
-    let kEmailKey = "entry.1778959864"
-    let kPhoneNumberKey = "entry.1184327797"
-    let kAgeGroupKey = "entry.1814542145"
+    private let url = NSURL(string: "https://docs.google.com/forms/d/1uB227lLrQyZNK36BB8cW8ZJuYjBST_Qy2SG9RfY3GV0/formResponse")!
+
+    private let kUserTypeEntryKey = "entry.141171165"
+    private let kInterestsKey = "entry.1399715047"
+    private let kNameKey = "entry.1750756117"
+    private let kEmailKey = "entry.1778959864"
+    private let kPhoneNumberKey = "entry.1184327797"
+    private let kAgeGroupKey = "entry.1814542145"
     
     func submitToAPI(submission: BYSubmission, completion: (success: Bool) -> Void) {
         
@@ -59,11 +60,12 @@ class APIWrapperSubmit: NSObject {
         connection = NSURLConnection(request: request, delegate: self)
         connection?.start()
     }
+    
+    private func clean(str: String) -> String {
+        return str.stringByReplacingOccurrencesOfString("&", withString: "%26")
+    }
 }
 
-private func clean(str: String) -> String {
-    return str.stringByReplacingOccurrencesOfString("&", withString: "%26")
-}
 
 // MARK: NSURLConnectionDelegate
 
