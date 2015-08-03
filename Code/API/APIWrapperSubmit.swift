@@ -8,6 +8,21 @@
 
 import Foundation
 
+/**
+This class serves as the submission wrapper.
+
+So here's the deal: BY wants to store data into a shared Google spreadsheet.
+The way to collect data into a Google spreadsheet is to create a Google form.
+Given a Google sheet, Google can automatically create a form for you with the ability
+to customize the questions for each field. Each field is connected to a column in
+the database, which means it contains a specific ID. Those IDs can be found in the HTML
+of the live form, and Google throws all of the user's form answers into the query string of a URL
+containing the form ID. So essentially all we do here is generate that same URL using the 
+form field IDs that we dug up from the HTML.
+
+Boom.
+*/
+
 class APIWrapperSubmit: NSObject {
     
     private var responseData = NSMutableData()

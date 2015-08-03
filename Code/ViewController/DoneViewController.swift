@@ -35,15 +35,21 @@ class DoneViewController: BasePageViewController {
     
     func configureLabels() {
         
-        self.thankYouLabel.text = "THANK YOU"
+        self.thankYouLabel.text = "THANK YOU!"
         self.thankYouLabel.textAlignment = .Center
         self.thankYouLabel.textColor = UIColor.whiteColor()
         self.thankYouLabel.font = UIFont.font(BYFontType.Light, fontSize: 80)
         
-        self.contactLabel.text = "We'll contact you soon."
+        let smallFont = UIFont.font(BYFontType.Light, fontSize: 40)
+        let largeFont = UIFont.font(BYFontType.Normal, fontSize: 50)
+        var mutableString = NSMutableAttributedString(string: "Now enjoy your free drink from\n", attributes: [NSFontAttributeName: smallFont])
+        let revelationRoastString = NSAttributedString(string: "Revelation Roast", attributes: [NSFontAttributeName: largeFont])
+        mutableString.appendAttributedString(revelationRoastString)
+        
+        self.contactLabel.attributedText = mutableString
         self.contactLabel.textAlignment = .Center
         self.contactLabel.textColor = UIColor.whiteColor()
-        self.contactLabel.font = UIFont.font(BYFontType.Light, fontSize: 40)
+        self.contactLabel.numberOfLines = 2
         
         self.getConnectedLabel.text = "Get connected to Bryte Youth"
         self.getConnectedLabel.textColor = UIColor.whiteColor()
